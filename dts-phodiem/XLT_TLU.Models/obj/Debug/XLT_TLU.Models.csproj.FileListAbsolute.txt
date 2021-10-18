@@ -1,0 +1,167 @@
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\XLT_TLU.Models.dll.config
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\XLT_TLU.Models.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\XLT_TLU.Models.pdb
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\csc.exe
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\csc.exe.config
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\csc.rsp
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\csi.exe
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\csi.rsp
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.AppContext.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.Diagnostics.StackTrace.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.Primitives.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\vbc.exe
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\vbc.exe.config
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\vbc.rsp
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\EntityFramework.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\EntityFramework.SqlServer.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\EntityFramework.xml
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\EntityFramework.SqlServer.xml
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CoreCompileInputs.cache
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CopyComplete
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.dll
+C:\Users\DungDev\source\repos\thongnt\dts-xlt-tlu\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.pdb
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll.config
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.pdb
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe.config
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.rsp
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.exe
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.rsp
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CSharp.Core.targets
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.VisualBasic.Core.targets
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.AppContext.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Collections.Immutable.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Diagnostics.StackTrace.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.Primitives.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Reflection.Metadata.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe.config
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.rsp
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe.config
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.xml
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.xml
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csprojAssemblyReference.cache
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CoreCompileInputs.cache
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CopyComplete
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.dll
+E:\PROJECT\P4_phodiem\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.pdb
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll.config
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.pdb
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe.config
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.rsp
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.exe
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.rsp
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.AppContext.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Collections.Immutable.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Reflection.Metadata.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe.config
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.rsp
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe.config
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EPPlus.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.xml
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.xml
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EPPlus.xml
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csprojAssemblyReference.cache
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CoreCompileInputs.cache
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CopyComplete
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.dll
+D:\Intern\New folder\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.pdb
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll.config
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\XLT_TLU.Models.pdb
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.exe.config
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csc.rsp
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.exe
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\csi.rsp
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.CSharp.Core.targets
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.amd64.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.DiaSymReader.Native.x86.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\Microsoft.VisualBasic.Core.targets
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.AppContext.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Collections.Immutable.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Diagnostics.StackTrace.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.IO.FileSystem.Primitives.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\System.Reflection.Metadata.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.exe.config
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\vbc.rsp
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\roslyn\VBCSCompiler.exe.config
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EPPlus.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.IO.RecyclableMemoryStream.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.xml
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EntityFramework.SqlServer.xml
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\EPPlus.xml
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.IO.RecyclableMemoryStream.xml
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CoreCompileInputs.cache
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CopyComplete
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.dll
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.pdb
+D:\New-project\Score-Statistics-and-Surveys\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.AssemblyReference.cache

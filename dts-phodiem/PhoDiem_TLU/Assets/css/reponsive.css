@@ -1,0 +1,19 @@
+﻿
+@media(max-width:1699px)
+{
+    
+    .Table__data {
+        width: 100%;
+        overflow: auto;
+    }
+}
+@media(max-width:1199px) {
+    .select__group{
+        flex-wrap:wrap;
+    }
+    .form-control {
+        width:45%;
+        margin-right: 5%;
+    }
+}
+

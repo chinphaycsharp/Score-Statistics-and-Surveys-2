@@ -1,0 +1,186 @@
+﻿
+@{ 
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<div id="main_content">
+    <div class="page-container">
+        <div class="form__select">
+            <div class="form__select-header">
+                <h4 class="form__select-header-Text">Thông kê tỷ lệ(%) điểm A,B,C,D,F trong nhiều năm</h4>
+            </div>
+            <div class="form__select-input">
+                @using (Html.BeginForm("MarkResult", "Mark", FormMethod.Post))
+                {
+                    <div class="form__select-input-container">
+                        @Html.ValidationSummary(true)
+                        <div class="select__group">
+                            @Html.DropDownList("subject_id", (IEnumerable<SelectListItem>)ViewBag.subject, "Môn học", new { @class = "select.input-group-sm form-control"})
+                            @Html.DropDownList("school_year_id_start", (IEnumerable<SelectListItem>)(ViewBag.years), "Năm xuất phát", new { @class = "select.input-group-sm form-control"})
+                            @Html.DropDownList("school_year_id_end", (IEnumerable<SelectListItem>)(ViewBag.years), "Năm kết thúc", new { @class = "select.input-group-sm form-control"})
+                            @Html.DropDownList("showOption", (IEnumerable<SelectListItem>)(ViewBag.showOption), "Hình thức", new { @class = "select.input-group-sm form-control"})
+                            @Html.DropDownList("markOption", (IEnumerable<SelectListItem>)(ViewBag.markOption), "Loại điểm", new { @class = "select.input-group-sm form-control"})
+                        </div>
+                        <div class="select__btn-container">
+                            <div class="select__btn-group">
+                                <input id="show__btn-id" class="show-data__option-btn" type="submit" value="Hiển thị" />
+                                <button id="export__btn-id" class="show-data__option-btn" value="Export" formaction="@Url.Action("Export")" formmethod="post">
+                                    xuất file excel
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="Table__data">
+            <table id="table_id_course-subject" class="display" width="100%" style="text-align: center;">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Học kỳ</th>
+                        <th>Tên lớp</th>
+                        <th>Tên giáo viên</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>STT</th>
+                        <th>Học kỳ</th>
+                        <th>Tên lớp</th>
+                        <th>Tên giáo viên</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+
+                    </tr>
+                </tfoot>
+            </table>
+            <table id="table_id_teacher" class="display" width="100%" style="text-align:center;display:none;">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn</th>
+                        <th>Tên giáo viên</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn học</th>
+                        <th>Tên giáo viên</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+                    </tr>
+                </tfoot>
+            </table>
+            <table id="table_id_enrollmentClass" class="display" width="100%" style="text-align:center;display:none;">
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn học</th>
+                        <th>Lớp quản lý</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+
+                    </tr>
+                </thead>
+                <tfoot>
+                    <tr>
+                        <th>STT</th>
+                        <th>Tên môn học</th>
+                        <th>Lớp quản lý</th>
+                        <th>Tổng số</th>
+                        <th>A</th>
+                        <th>Tỷ lệ (%) A</th>
+                        <th>B</th>
+                        <th>Tỷ lệ (%) B</th>
+                        <th> C</th>
+                        <th>Tỷ lệ (%) C</th>
+                        <th>D</th>
+                        <th>Tỷ lệ (%) D</th>
+                        <th>F</th>
+                        <th>Tỷ lệ (%) F</th>
+
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div class="chart__mark">
+
+            <div class="chart__mark-btn-group">
+                <button onclick="showChart(`chart-bar__id-bar`,`chart-bar__id-pie`)" class="btn chart__mark-show__btn">
+                    Biểu đồ tròn
+                </button>
+                <button onclick="showChart(`chart-bar__id-pie`,`chart-bar__id-bar`)" class="btn chart__mark-show__btn">
+                    Biểu đồ cột
+                </button>
+            </div>
+            <div class="chart__mark-char">
+                <div id="chart-bar__id-pie" class="chart__mark-char-pie " style="display:none;">
+                    <canvas id="chartPie"></canvas>
+                </div>
+                <div id="chart-bar__id-bar" class="chart__mark-char-bar " style="display:none;">
+                    <canvas id="myChart"></canvas>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Assets/js/mark.js"></script>

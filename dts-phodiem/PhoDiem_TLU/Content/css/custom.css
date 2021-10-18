@@ -1,0 +1,48 @@
+body{
+    font-size:0.8rem;
+}
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: rgba(116, 182, 199, 0.21);
+    
+}
+.table{
+    font:menu !important; 
+}
+.table th:first-child {
+   text-align:center;
+}
+.table td, .table th {
+    padding: .35rem;
+}
+.fa, .fas {
+    font-size: 12px;
+}
+div.btn-group-sm > .btn {
+    font-size: .25rem;
+    line-height: 1.5;
+    padding: 0.1rem 0.2rem;
+
+}
+.table.table-head-fixed thead tr:nth-child(1) th {
+    /*vertical-align: middle;*/
+}
+table.dataTable thead .sorting:before, table.dataTable thead .sorting:after, table.dataTable thead .sorting_asc:before, table.dataTable thead .sorting_asc:after, table.dataTable thead .sorting_desc:before, table.dataTable thead .sorting_desc:after, table.dataTable thead .sorting_asc_disabled:before, table.dataTable thead .sorting_asc_disabled:after, table.dataTable thead .sorting_desc_disabled:before, table.dataTable thead .sorting_desc_disabled:after {
+    bottom: 0.4em;
+}
+.form-control, .input-group-append > .btn{
+    height: calc(1.5125rem + 2px);
+    padding: 0.1rem 0.2rem;
+}
+.form-control-sm {
+    height: calc(1.3125rem + 2px);
+    padding: 0.1rem 0.2rem; 
+}
+.custom-select {
+    padding: .1rem 1.75rem .1rem .2rem;
+}
+.custom-select-sm {
+    font-size: 80%;
+}
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+    background-color: #007bff !important;
+}

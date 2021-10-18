@@ -1,0 +1,149 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width = device_width" initial-scale="1" />
+    <!--thư viện Chart.JS vẽ Đồ thị-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/0.2.0/Chart.min.js" type="text/javascript"></script>
+    
+    <!--import JQuery-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <!--My JavaScript-->
+   <script type="text/javascript" src="~/Scripts/index.js"></script>
+
+
+
+</head>
+
+<body>
+    <div id="main_content">
+        <div class="page-container">
+            <div class="form__select">
+                <div class="form__select-header">
+                    <h4 class="form__select-header-Text">Thông kê tỷ lệ(%) điểm A,B,C,D,F theo học phần từng năm</h4>
+                </div>
+                <div class="form__select-input">
+                    @using (Html.BeginForm("MarkResult2", "StatisticsByCourseSubject", FormMethod.Post))
+                    {
+                        <div class="form__select-input-container">
+                            @Html.ValidationSummary(true)
+                            <div class="select__group">
+                                @Html.DropDownList("hocKy", (IEnumerable<SelectListItem>)ViewBag.semester, "Học kỳ", new { @class = "select.input-group-sm form-control", style = "display:initial;", onclick = "setSemester(this)" })
+                                @Html.DropDownList("khoaHoc", (IEnumerable<SelectListItem>)(ViewBag.course_year), "Khóa học", new { @class = "select.input-group-sm form-control", style = "display:initial;", onclick = "setCourse(this)" })
+                                @Html.DropDownList("dotHoc", (IEnumerable<SelectListItem>)(ViewBag.semester_regitster_period), "Đợt học", new { @class = "select.input-group-sm form-control", style = "display:initial;", onclick = "setPeriod(this)" })
+                                @Html.DropDownList("monHoc", (IEnumerable<SelectListItem>)(ViewBag.subject), "Môn học", new { @class = "select.input-group-sm form-control", style = "display:initial;", onclick = "setSubject(this)" })
+                                @Html.DropDownList("showOption", (IEnumerable<SelectListItem>)(ViewBag.showOption), "Hình thức", new { @class = "select.input-group-sm form-control", style = "display:initial;" })
+                                @Html.DropDownList("markOption", (IEnumerable<SelectListItem>)(ViewBag.markOption), "Loại điểm", new { @class = "select.input-group-sm form-control", style = "display:initial;" })
+                            </div>
+                            <div class="select__btn-container">
+                                <div class="select__btn-group">
+                                    <input id="btn-submit" class="show-data__option-btn" type="submit" value="Lọc" />
+                                    <button id="export__btn-id2" class="show-data__option-btn" value="Export" formaction="@Url.Action("Export2")" formmethod="post">
+                                        xuất file excel
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+
+            <div class="Table__data">
+                <table class="table table-striped" id="table-course-subject" style="width: 100%;">
+                    <thead>
+                        <tr id="list-header" rowspan="2">
+                            <th scope="col">STT</th>
+                            <th scope="col">Lớp học phần</th>
+                            <th scope="col">Giảng viên</th>
+                            <th scope="col">Tổng số</th>
+                            <th scope="col">Số lượng A</th>
+                            <th scope="col">Tỉ lệ %A</th>
+                            <th scope="col">Số lượng B</th>
+                            <th scope="col">Tỉ lệ %B</th>
+                            <th scope="col">Số lượng C</th>
+                            <th scope="col">Tỉ lệ %C</th>
+                            <th scope="col">Số lượng D</th>
+                            <th scope="col">Tỉ lệ %D</th>
+                            <th scope="col">Số lượng F</th>
+                            <th scope="col">Tỉ lệ %F</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <table class="table table-striped" id="table-by-teacher" style="width: 100%; text-align:center;display:none;">
+                    <thead>
+                        <tr id="list-header" rowspan="2">
+                            <th scope="col">STT</th>
+                            <th scope="col">Lớp học phần</th>
+                            <th scope="col">Giảng viên</th>
+                            <th scope="col">Tổng số</th>
+                            <th scope="col">Số lượng A</th>
+                            <th scope="col">Tỉ lệ %A</th>
+                            <th scope="col">Số lượng B</th>
+                            <th scope="col">Tỉ lệ %B</th>
+                            <th scope="col">Số lượng C</th>
+                            <th scope="col">Tỉ lệ %C</th>
+                            <th scope="col">Số lượng D</th>
+                            <th scope="col">Tỉ lệ %D</th>
+                            <th scope="col">Số lượng F</th>
+                            <th scope="col">Tỉ lệ %F</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <table class="table table-striped" id="table-by-enrollmentClass" width="100%" style="text-align:center;display:none;">
+                    <thead>
+                        <tr id="list-header" rowspan="2">
+                            <th>STT</th>
+                            <th>Tên môn học</th>
+                            <th>Lớp quản lý</th>
+                            <th>Tổng số</th>
+                            <th>A</th>
+                            <th>Tỷ lệ (%) A</th>
+                            <th>B</th>
+                            <th>Tỷ lệ (%) B</th>
+                            <th> C</th>
+                            <th>Tỷ lệ (%) C</th>
+                            <th>D</th>
+                            <th>Tỷ lệ (%) D</th>
+                            <th>F</th>
+                            <th>Tỷ lệ (%) F</th>
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+            <div class="chart__mark">
+
+                <div class="chart__mark-btn-group">
+                    <button onclick="showChart(`chart-bar__id-bar-2`,`chart-bar__id-pie-2`)" class="btn chart__mark-show__btn">
+                        Test Biểu đồ
+                    </button>
+                    <button onclick="showChart(`chart-bar__id-pie-2`,`chart-bar__id-bar-2`)" class="btn chart__mark-show__btn">
+                        Hiện biểu đồ
+                    </button>
+                </div>
+                <div class="chart__mark-char">
+                    <div id="chart-bar__id-pie-2" class="chart__mark-char-pie " style="display:none;">
+                        <canvas id="testChartPie" width="1000" style="width:100%;max-width:1000px"></canvas>
+                    </div>
+                    <div id="chart-bar__id-bar-2" class="chart__mark-char-bar " style="display:none;">
+                        <canvas id="testChart2" width="1000" style="width:100%;max-width:1000px"></canvas>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        
+    </div>   
+</body>
+</html>
+
+

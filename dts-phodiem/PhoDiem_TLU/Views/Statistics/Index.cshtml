@@ -1,0 +1,152 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="~/Plugins/chart/Chart.min.js"></script>
+    <script src="~/Scripts/jquery-3.3.1.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <link href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css" rel="stylesheet" />
+</head>
+<body>
+    <h2>toan</h2>
+    @using (Html.BeginForm("markResult", "Statistics", FormMethod.Post))
+    {
+        @Html.ValidationSummary(true)
+        @Html.DropDownList("hocKy", (IEnumerable<SelectListItem>)ViewBag.semester, "Học kỳ", new { @class = "col-2" })
+        @Html.DropDownList("khoaHoc", (IEnumerable<SelectListItem>)(ViewBag.course_year), "Khóa học", new { @class = "col-2"})
+        @Html.DropDownList("dotHoc", (IEnumerable<SelectListItem>)(ViewBag.semester_regitster_period), "Đợt học", new { @class = "col-2" })
+        @Html.DropDownList("monHoc", (IEnumerable<SelectListItem>)(ViewBag.subject), "Môn học", new { @class = "col-2" })
+        <input class="button" type="submit" value="xem" />
+
+    }
+
+    <div class="container row">
+        <div class="col-md-8 card">
+            <canvas id="myChart"></canvas>
+        </div>
+        <div class="col-md-4 card">
+            bieu do
+        </div>
+    </div>
+    <table id="table_id" class="display">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>subject_name</th>
+                <th>id</th>
+                <th>subject_name</th>
+                <th>id</th>
+                <th>subject_name</th>
+                <th>id</th>
+                <th>subject_name</th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @if (ViewBag.data != null)
+            {
+                foreach(var s in ViewBag.data)
+                {
+                    <tr>
+                        <td>@s.id</td>
+                        <td>@s.subject_name</td>
+                    </tr>
+                }
+            }
+        </tbody>
+    </table>
+    <button onclick="xuat()">xuất file excel</button>
+    <script>
+        var data1 = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
+        var dataLabel = ['0', '<=1', '<=2', '<=3', '<=4', '<=5', '<=6', '<=7', '<=8', '<=9', '<=10']
+        $(document).ready(function () {
+            $("#table_id").DataTable({
+            });
+            $('form').submit(function (event) {
+                $.ajax({
+                    method: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    // other AJAX settings goes here
+                    // ..
+                }).done(function (response) {
+                    if (response == null) {
+                        alert("Đã có lỗi xảy ra! Vui lòng tải lại trang")
+                    }
+                    else {
+                        if (response.data == null || response.error == 200) {
+                            alert("Không có dữ liệu được nhận")
+                        }
+                        else {
+                            data1 = response.data;
+                            massPopChart.config.data.datasets[0].data = data1;
+                            massPopChart.update();
+                        }
+                    }
+                    // Process the response here
+                });
+                event.preventDefault(); // <- avoid reloading
+            });
+        });
+
+        function xuat() {
+
+            window.location = '/Statistics/Export';
+        }
+
+        //thay dổi học kỳ
+        //vẽ biểu đồ
+        let myChart = document.getElementById('myChart').getContext('2d');
+        let massPopChart = new Chart(myChart, {
+            type: 'bar', // bar, horizontalBar, pie, line, doughnut, radar, polarArea
+            data: {
+                labels: dataLabel,
+                datasets: [{
+                    label: 'Điểm tổng kết',
+                    data: data1,
+                    //backgroundColor:'green',
+                    backgroundColor: '#198002',
+                    borderColor: '#7C7AFD',
+                    hoverBorderWidth: 1,
+                    hoverBorderColor: '#7C7AFD'
+                }]
+            },
+            options: {
+                title: {
+                    display: true,
+                    text: 'Biểu đồ phân bố điểm tổng kết',
+                    fontSize: 20
+                },
+                legend: {
+                    display: true,
+                    position: 'right',
+                    labels: {
+                        fontColor: '#000'
+                    }
+                },
+                layout: {
+                    padding: {
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips: {
+                    enabled: true
+                }
+            }
+        });
+
+    </script>
+</body>
+
+
+
+</html>
+
+

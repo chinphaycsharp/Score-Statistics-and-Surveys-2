@@ -1,0 +1,594 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{21C64E1F-DDE6-434D-B9D9-AE5F3D339E62}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XLT_TLU.Models</RootNamespace>
+    <AssemblyName>XLT_TLU.Models</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44338</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="EPPlus, Version=5.7.4.0, Culture=neutral, PublicKeyToken=ea159fdaa78159a1, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPPlus.5.7.4\lib\net45\EPPlus.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.IO.RecyclableMemoryStream, Version=1.4.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IO.RecyclableMemoryStream.1.4.1\lib\net45\Microsoft.IO.RecyclableMemoryStream.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CollectionStatus.cs" />
+    <Compile Include="CollectionStatus1.cs" />
+    <Compile Include="DTSModels\CollectionStatus.cs" />
+    <Compile Include="DTSModels\CollectionStatus1.cs" />
+    <Compile Include="DTSModels\ModelsDTS.cs" />
+    <Compile Include="DTSModels\oauth_access_token.cs" />
+    <Compile Include="DTSModels\oauth_client_details.cs" />
+    <Compile Include="DTSModels\StudentDocument.cs" />
+    <Compile Include="DTSModels\StudentDocument2019.cs" />
+    <Compile Include="DTSModels\student_admission_infomation.cs" />
+    <Compile Include="DTSModels\tbl_academic_title.cs" />
+    <Compile Include="DTSModels\tbl_activity_log.cs" />
+    <Compile Include="DTSModels\tbl_administrative_unit.cs" />
+    <Compile Include="DTSModels\tbl_behavior_mark_classification_standard.cs" />
+    <Compile Include="DTSModels\tbl_behavior_mark_criteria.cs" />
+    <Compile Include="DTSModels\tbl_budget_distribution.cs" />
+    <Compile Include="DTSModels\tbl_building.cs" />
+    <Compile Include="DTSModels\tbl_calendar_event.cs" />
+    <Compile Include="DTSModels\tbl_calendar_event_attachment.cs" />
+    <Compile Include="DTSModels\tbl_calendar_event_attendee.cs" />
+    <Compile Include="DTSModels\tbl_calendar_event_car.cs" />
+    <Compile Include="DTSModels\tbl_calendar_event_priority.cs" />
+    <Compile Include="DTSModels\tbl_certificate.cs" />
+    <Compile Include="DTSModels\tbl_civil_servant_category.cs" />
+    <Compile Include="DTSModels\tbl_civil_servant_category_grade.cs" />
+    <Compile Include="DTSModels\tbl_civil_servant_grade.cs" />
+    <Compile Include="DTSModels\tbl_classification.cs" />
+    <Compile Include="DTSModels\tbl_country.cs" />
+    <Compile Include="DTSModels\tbl_course_hour.cs" />
+    <Compile Include="DTSModels\tbl_course_subject.cs" />
+    <Compile Include="DTSModels\tbl_course_subject_config.cs" />
+    <Compile Include="DTSModels\tbl_course_subject_subject_exam_formula.cs" />
+    <Compile Include="DTSModels\tbl_course_subject_timetable.cs" />
+    <Compile Include="DTSModels\tbl_course_year.cs" />
+    <Compile Include="DTSModels\tbl_criteria_search_student.cs" />
+    <Compile Include="DTSModels\tbl_criteria_search_student_except_subject.cs" />
+    <Compile Include="DTSModels\tbl_decision.cs" />
+    <Compile Include="DTSModels\tbl_degree_student.cs" />
+    <Compile Include="DTSModels\tbl_department.cs" />
+    <Compile Include="DTSModels\tbl_discipline.cs" />
+    <Compile Include="DTSModels\tbl_discount_tuition_fee.cs" />
+    <Compile Include="DTSModels\tbl_discount_tuition_fee_item.cs" />
+    <Compile Include="DTSModels\tbl_education_degree.cs" />
+    <Compile Include="DTSModels\tbl_education_fee_config.cs" />
+    <Compile Include="DTSModels\tbl_education_level.cs" />
+    <Compile Include="DTSModels\tbl_education_program.cs" />
+    <Compile Include="DTSModels\tbl_education_program_number_of_credit.cs" />
+    <Compile Include="DTSModels\tbl_education_program_tuition_fee.cs" />
+    <Compile Include="DTSModels\tbl_education_type.cs" />
+    <Compile Include="DTSModels\tbl_education_voucher.cs" />
+    <Compile Include="DTSModels\tbl_education_voucher_detail.cs" />
+    <Compile Include="DTSModels\tbl_enrollment_class.cs" />
+    <Compile Include="DTSModels\tbl_enrollment_class_history.cs" />
+    <Compile Include="DTSModels\tbl_enrollment_class_reward.cs" />
+    <Compile Include="DTSModels\tbl_enrollment_class_reward_condition.cs" />
+    <Compile Include="DTSModels\tbl_enrollment_class_staff.cs" />
+    <Compile Include="DTSModels\tbl_equivalent_subject.cs" />
+    <Compile Include="DTSModels\tbl_ethnics.cs" />
+    <Compile Include="DTSModels\tbl_exam.cs" />
+    <Compile Include="DTSModels\tbl_exam_date.cs" />
+    <Compile Include="DTSModels\tbl_exam_hour.cs" />
+    <Compile Include="DTSModels\tbl_exam_register_period.cs" />
+    <Compile Include="DTSModels\tbl_exam_room_period.cs" />
+    <Compile Include="DTSModels\tbl_exam_skill.cs" />
+    <Compile Include="DTSModels\tbl_exam_status.cs" />
+    <Compile Include="DTSModels\tbl_exam_type.cs" />
+    <Compile Include="DTSModels\tbl_expectation_register.cs" />
+    <Compile Include="DTSModels\tbl_fee_config_item.cs" />
+    <Compile Include="DTSModels\tbl_fee_item.cs" />
+    <Compile Include="DTSModels\tbl_fee_item_detail.cs" />
+    <Compile Include="DTSModels\tbl_file_description.cs" />
+    <Compile Include="DTSModels\tbl_global_property.cs" />
+    <Compile Include="DTSModels\tbl_graduation_period.cs" />
+    <Compile Include="DTSModels\tbl_group_subject_program.cs" />
+    <Compile Include="DTSModels\tbl_inventory_item.cs" />
+    <Compile Include="DTSModels\tbl_knowledge_block.cs" />
+    <Compile Include="DTSModels\tbl_knowledge_program.cs" />
+    <Compile Include="DTSModels\tbl_labour_agreement_type.cs" />
+    <Compile Include="DTSModels\tbl_learning_skill.cs" />
+    <Compile Include="DTSModels\tbl_location.cs" />
+    <Compile Include="DTSModels\tbl_mark_type.cs" />
+    <Compile Include="DTSModels\tbl_organization.cs" />
+    <Compile Include="DTSModels\tbl_organization_user.cs" />
+    <Compile Include="DTSModels\tbl_overtime_type.cs" />
+    <Compile Include="DTSModels\tbl_payroll_period.cs" />
+    <Compile Include="DTSModels\tbl_person.cs" />
+    <Compile Include="DTSModels\tbl_person_address.cs" />
+    <Compile Include="DTSModels\tbl_position.cs" />
+    <Compile Include="DTSModels\tbl_position_staff.cs" />
+    <Compile Include="DTSModels\tbl_position_title.cs" />
+    <Compile Include="DTSModels\tbl_prerequisite_subject.cs" />
+    <Compile Include="DTSModels\tbl_profession.cs" />
+    <Compile Include="DTSModels\tbl_program_subject.cs" />
+    <Compile Include="DTSModels\tbl_program_subject_semester.cs" />
+    <Compile Include="DTSModels\tbl_receive_pay_able.cs" />
+    <Compile Include="DTSModels\tbl_receive_pay_able_detail.cs" />
+    <Compile Include="DTSModels\tbl_register_period_time_config.cs" />
+    <Compile Include="DTSModels\tbl_reg_student_course_subject.cs" />
+    <Compile Include="DTSModels\tbl_reg_student_subject.cs" />
+    <Compile Include="DTSModels\tbl_religion.cs" />
+    <Compile Include="DTSModels\tbl_reward.cs" />
+    <Compile Include="DTSModels\tbl_reward_decree.cs" />
+    <Compile Include="DTSModels\tbl_role.cs" />
+    <Compile Include="DTSModels\tbl_role_tution_enrollment_class.cs" />
+    <Compile Include="DTSModels\tbl_room.cs" />
+    <Compile Include="DTSModels\tbl_salary_config.cs" />
+    <Compile Include="DTSModels\tbl_salary_config_item.cs" />
+    <Compile Include="DTSModels\tbl_salary_increment_type.cs" />
+    <Compile Include="DTSModels\tbl_salary_item.cs" />
+    <Compile Include="DTSModels\tbl_scholarship_condition.cs" />
+    <Compile Include="DTSModels\tbl_scholarship_fund.cs" />
+    <Compile Include="DTSModels\tbl_scholarship_fund_type.cs" />
+    <Compile Include="DTSModels\tbl_school_fee_config.cs" />
+    <Compile Include="DTSModels\tbl_semester.cs" />
+    <Compile Include="DTSModels\tbl_semester_exam_period.cs" />
+    <Compile Include="DTSModels\tbl_semester_register_period.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam_course_subject.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam_date.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam_hour.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam_hour_room.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_exam_room.cs" />
+    <Compile Include="DTSModels\tbl_semester_subject_learning_skill.cs" />
+    <Compile Include="DTSModels\tbl_shift_work.cs" />
+    <Compile Include="DTSModels\tbl_shift_work_time_period.cs" />
+    <Compile Include="DTSModels\tbl_shool_year.cs" />
+    <Compile Include="DTSModels\tbl_social_class.cs" />
+    <Compile Include="DTSModels\tbl_social_priority.cs" />
+    <Compile Include="DTSModels\tbl_speciality.cs" />
+    <Compile Include="DTSModels\tbl_speciality_program.cs" />
+    <Compile Include="DTSModels\tbl_specialty_admissions_map.cs" />
+    <Compile Include="DTSModels\tbl_special_point.cs" />
+    <Compile Include="DTSModels\tbl_staff.cs" />
+    <Compile Include="DTSModels\tbl_staff_allowance_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_civil_servant_grade.cs" />
+    <Compile Include="DTSModels\tbl_staff_disciplinary_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_education_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_family_relationship.cs" />
+    <Compile Include="DTSModels\tbl_staff_labour_agreement.cs" />
+    <Compile Include="DTSModels\tbl_staff_labour_agreement_attachment.cs" />
+    <Compile Include="DTSModels\tbl_staff_reward_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_salary_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_salary_property.cs" />
+    <Compile Include="DTSModels\tbl_staff_travelling_history.cs" />
+    <Compile Include="DTSModels\tbl_staff_work_schedule.cs" />
+    <Compile Include="DTSModels\tbl_status.cs" />
+    <Compile Include="DTSModels\tbl_student.cs" />
+    <Compile Include="DTSModels\tbl_student_behavior_criteria_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_call_roll.cs" />
+    <Compile Include="DTSModels\tbl_student_candidate_profile.cs" />
+    <Compile Include="DTSModels\tbl_student_certificate.cs" />
+    <Compile Include="DTSModels\tbl_student_code_key.cs" />
+    <Compile Include="DTSModels\tbl_student_course_subject.cs" />
+    <Compile Include="DTSModels\tbl_student_course_subject_cancel_fee.cs" />
+    <Compile Include="DTSModels\tbl_student_course_subject_edited.cs" />
+    <Compile Include="DTSModels\tbl_student_course_subject_history.cs" />
+    <Compile Include="DTSModels\tbl_student_decision.cs" />
+    <Compile Include="DTSModels\tbl_student_decision_type.cs" />
+    <Compile Include="DTSModels\tbl_student_discipline.cs" />
+    <Compile Include="DTSModels\tbl_student_education_program.cs" />
+    <Compile Include="DTSModels\tbl_student_exam_group.cs" />
+    <Compile Include="DTSModels\tbl_student_expectation_register.cs" />
+    <Compile Include="DTSModels\tbl_student_fee_calculate.cs" />
+    <Compile Include="DTSModels\tbl_student_graduate.cs" />
+    <Compile Include="DTSModels\tbl_student_graduate_conditional.cs" />
+    <Compile Include="DTSModels\tbl_student_group.cs" />
+    <Compile Include="DTSModels\tbl_student_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_not_complete_fee_semester.cs" />
+    <Compile Include="DTSModels\tbl_student_object.cs" />
+    <Compile Include="DTSModels\tbl_student_object_policy.cs" />
+    <Compile Include="DTSModels\tbl_student_object_student.cs" />
+    <Compile Include="DTSModels\tbl_student_object_student_semester.cs" />
+    <Compile Include="DTSModels\tbl_student_object_subsidize.cs" />
+    <Compile Include="DTSModels\tbl_student_object_subsidize_semester.cs" />
+    <Compile Include="DTSModels\tbl_student_other_fee.cs" />
+    <Compile Include="DTSModels\tbl_student_private_document.cs" />
+    <Compile Include="DTSModels\tbl_student_process_assessment_point.cs" />
+    <Compile Include="DTSModels\tbl_student_register_change.cs" />
+    <Compile Include="DTSModels\tbl_student_research.cs" />
+    <Compile Include="DTSModels\tbl_student_reward.cs" />
+    <Compile Include="DTSModels\tbl_student_reward_condition.cs" />
+    <Compile Include="DTSModels\tbl_student_scholarship_history.cs" />
+    <Compile Include="DTSModels\tbl_student_scholarship_stock.cs" />
+    <Compile Include="DTSModels\tbl_student_scholarship_stock_detail.cs" />
+    <Compile Include="DTSModels\tbl_student_school_year_summary_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_behavior_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_behavior_mark_history.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_reward_scholarship.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_subject_exam.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_subject_exam_room.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_summary.cs" />
+    <Compile Include="DTSModels\tbl_student_semester_summary_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_status_student_semester.cs" />
+    <Compile Include="DTSModels\tbl_student_student_private_document.cs" />
+    <Compile Include="DTSModels\tbl_student_study_alert_level.cs" />
+    <Compile Include="DTSModels\tbl_student_study_alert_level_lower.cs" />
+    <Compile Include="DTSModels\tbl_student_subject_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_summary_mark.cs" />
+    <Compile Include="DTSModels\tbl_student_tuition_fee_calculate.cs" />
+    <Compile Include="DTSModels\tbl_student_tuition_fee_calculate_detail.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_condition.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_condition_certificate.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_condition_level.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_condition_student_object.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_level.cs" />
+    <Compile Include="DTSModels\tbl_study_alert_running.cs" />
+    <Compile Include="DTSModels\tbl_subject.cs" />
+    <Compile Include="DTSModels\tbl_subject_education_level_type.cs" />
+    <Compile Include="DTSModels\tbl_subject_exam.cs" />
+    <Compile Include="DTSModels\tbl_subject_exam_type.cs" />
+    <Compile Include="DTSModels\tbl_subject_learning_skill.cs" />
+    <Compile Include="DTSModels\tbl_testBag_create_time.cs" />
+    <Compile Include="DTSModels\tbl_test_bag.cs" />
+    <Compile Include="DTSModels\tbl_timesheet.cs" />
+    <Compile Include="DTSModels\tbl_timesheet_detail.cs" />
+    <Compile Include="DTSModels\tbl_timetable_detail.cs" />
+    <Compile Include="DTSModels\tbl_training_base.cs" />
+    <Compile Include="DTSModels\tbl_training_base_semester_subject.cs" />
+    <Compile Include="DTSModels\tbl_training_base_semester_subject_exam.cs" />
+    <Compile Include="DTSModels\tbl_transfer_schedule_history.cs" />
+    <Compile Include="DTSModels\tbl_user.cs" />
+    <Compile Include="DTSModels\tbl_user_group.cs" />
+    <Compile Include="DTSModels\tbl_user_trainning_base.cs" />
+    <Compile Include="DTSModels\tbl_voucher_detail_recieve_pay_able_link.cs" />
+    <Compile Include="DTSModels\tbl_voucher_detail_to_voucher_detail_link.cs" />
+    <Compile Include="DTSModels\tbl_voucher_recieve_pay_able.cs" />
+    <Compile Include="DTSModels\tbl_working_status.cs" />
+    <Compile Include="DTSModels\tbl__student_student_group.cs" />
+    <Compile Include="Helpers\StringHelper.cs" />
+    <Compile Include="oauth_access_token.cs" />
+    <Compile Include="oauth_client_details.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StudentDocument.cs" />
+    <Compile Include="StudentDocument2019.cs" />
+    <Compile Include="student_admission_infomation.cs" />
+    <Compile Include="tbl_academic_title.cs" />
+    <Compile Include="tbl_activity_log.cs" />
+    <Compile Include="tbl_administrative_unit.cs" />
+    <Compile Include="tbl_behavior_mark_classification_standard.cs" />
+    <Compile Include="tbl_behavior_mark_criteria.cs" />
+    <Compile Include="tbl_budget_distribution.cs" />
+    <Compile Include="tbl_building.cs" />
+    <Compile Include="tbl_calendar_event.cs" />
+    <Compile Include="tbl_calendar_event_attachment.cs" />
+    <Compile Include="tbl_calendar_event_attendee.cs" />
+    <Compile Include="tbl_calendar_event_car.cs" />
+    <Compile Include="tbl_calendar_event_priority.cs" />
+    <Compile Include="tbl_certificate.cs" />
+    <Compile Include="tbl_civil_servant_category.cs" />
+    <Compile Include="tbl_civil_servant_category_grade.cs" />
+    <Compile Include="tbl_civil_servant_grade.cs" />
+    <Compile Include="tbl_classification.cs" />
+    <Compile Include="tbl_country.cs" />
+    <Compile Include="tbl_course_hour.cs" />
+    <Compile Include="tbl_course_subject.cs" />
+    <Compile Include="tbl_course_subject_config.cs" />
+    <Compile Include="tbl_course_subject_subject_exam_formula.cs" />
+    <Compile Include="tbl_course_subject_timetable.cs" />
+    <Compile Include="tbl_course_year.cs" />
+    <Compile Include="tbl_criteria_search_student.cs" />
+    <Compile Include="tbl_criteria_search_student_except_subject.cs" />
+    <Compile Include="tbl_decision.cs" />
+    <Compile Include="tbl_degree_student.cs" />
+    <Compile Include="tbl_department.cs" />
+    <Compile Include="tbl_discipline.cs" />
+    <Compile Include="tbl_discount_tuition_fee.cs" />
+    <Compile Include="tbl_discount_tuition_fee_item.cs" />
+    <Compile Include="tbl_education_degree.cs" />
+    <Compile Include="tbl_education_fee_config.cs" />
+    <Compile Include="tbl_education_level.cs" />
+    <Compile Include="tbl_education_program.cs" />
+    <Compile Include="tbl_education_program_number_of_credit.cs" />
+    <Compile Include="tbl_education_program_tuition_fee.cs" />
+    <Compile Include="tbl_education_type.cs" />
+    <Compile Include="tbl_education_voucher.cs" />
+    <Compile Include="tbl_education_voucher_detail.cs" />
+    <Compile Include="tbl_enrollment_class.cs" />
+    <Compile Include="tbl_enrollment_class_history.cs" />
+    <Compile Include="tbl_enrollment_class_reward.cs" />
+    <Compile Include="tbl_enrollment_class_reward_condition.cs" />
+    <Compile Include="tbl_enrollment_class_staff.cs" />
+    <Compile Include="tbl_equivalent_subject.cs" />
+    <Compile Include="tbl_ethnics.cs" />
+    <Compile Include="tbl_exam.cs" />
+    <Compile Include="tbl_exam_date.cs" />
+    <Compile Include="tbl_exam_hour.cs" />
+    <Compile Include="tbl_exam_register_period.cs" />
+    <Compile Include="tbl_exam_room_period.cs" />
+    <Compile Include="tbl_exam_skill.cs" />
+    <Compile Include="tbl_exam_status.cs" />
+    <Compile Include="tbl_exam_type.cs" />
+    <Compile Include="tbl_expectation_register.cs" />
+    <Compile Include="tbl_fee_config_item.cs" />
+    <Compile Include="tbl_fee_item.cs" />
+    <Compile Include="tbl_fee_item_detail.cs" />
+    <Compile Include="tbl_file_description.cs" />
+    <Compile Include="tbl_global_property.cs" />
+    <Compile Include="tbl_graduation_period.cs" />
+    <Compile Include="tbl_group_subject_program.cs" />
+    <Compile Include="tbl_inventory_item.cs" />
+    <Compile Include="tbl_knowledge_block.cs" />
+    <Compile Include="tbl_knowledge_program.cs" />
+    <Compile Include="tbl_labour_agreement_type.cs" />
+    <Compile Include="tbl_learning_skill.cs" />
+    <Compile Include="tbl_location.cs" />
+    <Compile Include="tbl_mark_type.cs" />
+    <Compile Include="tbl_organization.cs" />
+    <Compile Include="tbl_organization_user.cs" />
+    <Compile Include="tbl_overtime_type.cs" />
+    <Compile Include="tbl_payroll_period.cs" />
+    <Compile Include="tbl_person.cs" />
+    <Compile Include="tbl_person_address.cs" />
+    <Compile Include="tbl_position.cs" />
+    <Compile Include="tbl_position_staff.cs" />
+    <Compile Include="tbl_position_title.cs" />
+    <Compile Include="tbl_prerequisite_subject.cs" />
+    <Compile Include="tbl_profession.cs" />
+    <Compile Include="tbl_program_subject.cs" />
+    <Compile Include="tbl_program_subject_semester.cs" />
+    <Compile Include="tbl_receive_pay_able.cs" />
+    <Compile Include="tbl_receive_pay_able_detail.cs" />
+    <Compile Include="tbl_register_period_time_config.cs" />
+    <Compile Include="tbl_reg_student_course_subject.cs" />
+    <Compile Include="tbl_reg_student_subject.cs" />
+    <Compile Include="tbl_religion.cs" />
+    <Compile Include="tbl_reward.cs" />
+    <Compile Include="tbl_reward_decree.cs" />
+    <Compile Include="tbl_role.cs" />
+    <Compile Include="tbl_role_tution_enrollment_class.cs" />
+    <Compile Include="tbl_room.cs" />
+    <Compile Include="tbl_salary_config.cs" />
+    <Compile Include="tbl_salary_config_item.cs" />
+    <Compile Include="tbl_salary_increment_type.cs" />
+    <Compile Include="tbl_salary_item.cs" />
+    <Compile Include="tbl_scholarship_condition.cs" />
+    <Compile Include="tbl_scholarship_fund.cs" />
+    <Compile Include="tbl_scholarship_fund_type.cs" />
+    <Compile Include="tbl_school_fee_config.cs" />
+    <Compile Include="tbl_semester.cs" />
+    <Compile Include="tbl_semester_exam_period.cs" />
+    <Compile Include="tbl_semester_register_period.cs" />
+    <Compile Include="tbl_semester_subject.cs" />
+    <Compile Include="tbl_semester_subject_exam.cs" />
+    <Compile Include="tbl_semester_subject_exam_course_subject.cs" />
+    <Compile Include="tbl_semester_subject_exam_date.cs" />
+    <Compile Include="tbl_semester_subject_exam_hour.cs" />
+    <Compile Include="tbl_semester_subject_exam_hour_room.cs" />
+    <Compile Include="tbl_semester_subject_exam_room.cs" />
+    <Compile Include="tbl_semester_subject_learning_skill.cs" />
+    <Compile Include="tbl_shift_work.cs" />
+    <Compile Include="tbl_shift_work_time_period.cs" />
+    <Compile Include="tbl_shool_year.cs" />
+    <Compile Include="tbl_social_class.cs" />
+    <Compile Include="tbl_social_priority.cs" />
+    <Compile Include="tbl_speciality.cs" />
+    <Compile Include="tbl_speciality_program.cs" />
+    <Compile Include="tbl_specialty_admissions_map.cs" />
+    <Compile Include="tbl_special_point.cs" />
+    <Compile Include="tbl_staff.cs" />
+    <Compile Include="tbl_staff_allowance_history.cs" />
+    <Compile Include="tbl_staff_civil_servant_grade.cs" />
+    <Compile Include="tbl_staff_disciplinary_history.cs" />
+    <Compile Include="tbl_staff_education_history.cs" />
+    <Compile Include="tbl_staff_family_relationship.cs" />
+    <Compile Include="tbl_staff_labour_agreement.cs" />
+    <Compile Include="tbl_staff_labour_agreement_attachment.cs" />
+    <Compile Include="tbl_staff_reward_history.cs" />
+    <Compile Include="tbl_staff_salary_history.cs" />
+    <Compile Include="tbl_staff_salary_property.cs" />
+    <Compile Include="tbl_staff_travelling_history.cs" />
+    <Compile Include="tbl_staff_work_schedule.cs" />
+    <Compile Include="tbl_status.cs" />
+    <Compile Include="tbl_student.cs" />
+    <Compile Include="tbl_student_behavior_criteria_mark.cs" />
+    <Compile Include="tbl_student_call_roll.cs" />
+    <Compile Include="tbl_student_candidate_profile.cs" />
+    <Compile Include="tbl_student_certificate.cs" />
+    <Compile Include="tbl_student_code_key.cs" />
+    <Compile Include="tbl_student_course_subject.cs" />
+    <Compile Include="tbl_student_course_subject_cancel_fee.cs" />
+    <Compile Include="tbl_student_course_subject_edited.cs" />
+    <Compile Include="tbl_student_course_subject_history.cs" />
+    <Compile Include="tbl_student_decision.cs" />
+    <Compile Include="tbl_student_decision_type.cs" />
+    <Compile Include="tbl_student_discipline.cs" />
+    <Compile Include="tbl_student_education_program.cs" />
+    <Compile Include="tbl_student_exam_group.cs" />
+    <Compile Include="tbl_student_expectation_register.cs" />
+    <Compile Include="tbl_student_fee_calculate.cs" />
+    <Compile Include="tbl_student_graduate.cs" />
+    <Compile Include="tbl_student_graduate_conditional.cs" />
+    <Compile Include="tbl_student_group.cs" />
+    <Compile Include="tbl_student_mark.cs" />
+    <Compile Include="tbl_student_not_complete_fee_semester.cs" />
+    <Compile Include="tbl_student_object.cs" />
+    <Compile Include="tbl_student_object_policy.cs" />
+    <Compile Include="tbl_student_object_student.cs" />
+    <Compile Include="tbl_student_object_student_semester.cs" />
+    <Compile Include="tbl_student_object_subsidize.cs" />
+    <Compile Include="tbl_student_object_subsidize_semester.cs" />
+    <Compile Include="tbl_student_other_fee.cs" />
+    <Compile Include="tbl_student_private_document.cs" />
+    <Compile Include="tbl_student_process_assessment_point.cs" />
+    <Compile Include="tbl_student_register_change.cs" />
+    <Compile Include="tbl_student_research.cs" />
+    <Compile Include="tbl_student_reward.cs" />
+    <Compile Include="tbl_student_reward_condition.cs" />
+    <Compile Include="tbl_student_scholarship_history.cs" />
+    <Compile Include="tbl_student_scholarship_stock.cs" />
+    <Compile Include="tbl_student_scholarship_stock_detail.cs" />
+    <Compile Include="tbl_student_school_year_summary_mark.cs" />
+    <Compile Include="tbl_student_semester_behavior_mark.cs" />
+    <Compile Include="tbl_student_semester_behavior_mark_history.cs" />
+    <Compile Include="tbl_student_semester_reward_scholarship.cs" />
+    <Compile Include="tbl_student_semester_subject_exam.cs" />
+    <Compile Include="tbl_student_semester_subject_exam_room.cs" />
+    <Compile Include="tbl_student_semester_summary.cs" />
+    <Compile Include="tbl_student_semester_summary_mark.cs" />
+    <Compile Include="tbl_student_status_student_semester.cs" />
+    <Compile Include="tbl_student_student_private_document.cs" />
+    <Compile Include="tbl_student_study_alert_level.cs" />
+    <Compile Include="tbl_student_study_alert_level_lower.cs" />
+    <Compile Include="tbl_student_subject_mark.cs" />
+    <Compile Include="tbl_student_summary_mark.cs" />
+    <Compile Include="tbl_student_tuition_fee_calculate.cs" />
+    <Compile Include="tbl_student_tuition_fee_calculate_detail.cs" />
+    <Compile Include="tbl_study_alert_condition.cs" />
+    <Compile Include="tbl_study_alert_condition_certificate.cs" />
+    <Compile Include="tbl_study_alert_condition_level.cs" />
+    <Compile Include="tbl_study_alert_condition_student_object.cs" />
+    <Compile Include="tbl_study_alert_level.cs" />
+    <Compile Include="tbl_study_alert_running.cs" />
+    <Compile Include="tbl_subject.cs" />
+    <Compile Include="tbl_subject_education_level_type.cs" />
+    <Compile Include="tbl_subject_exam.cs" />
+    <Compile Include="tbl_subject_exam_type.cs" />
+    <Compile Include="tbl_subject_learning_skill.cs" />
+    <Compile Include="tbl_testBag_create_time.cs" />
+    <Compile Include="tbl_test_bag.cs" />
+    <Compile Include="tbl_timesheet.cs" />
+    <Compile Include="tbl_timesheet_detail.cs" />
+    <Compile Include="tbl_timetable_detail.cs" />
+    <Compile Include="tbl_training_base.cs" />
+    <Compile Include="tbl_training_base_semester_subject.cs" />
+    <Compile Include="tbl_training_base_semester_subject_exam.cs" />
+    <Compile Include="tbl_transfer_schedule_history.cs" />
+    <Compile Include="tbl_user.cs" />
+    <Compile Include="tbl_user_group.cs" />
+    <Compile Include="tbl_user_trainning_base.cs" />
+    <Compile Include="tbl_voucher_detail_recieve_pay_able_link.cs" />
+    <Compile Include="tbl_voucher_detail_to_voucher_detail_link.cs" />
+    <Compile Include="tbl_voucher_recieve_pay_able.cs" />
+    <Compile Include="tbl_working_status.cs" />
+    <Compile Include="tbl__student_student_group.cs" />
+    <Compile Include="DTSTLUModels.cs" />
+    <Compile Include="XLTModels.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>50372</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44338/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,105 @@
+﻿@model PhoDiem_TLU.Models.UserLoginViewModel
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    <link rel="stylesheet" href="/Content/plugins/fontawesome-free/css/all.min.css">
+
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+    <link rel="stylesheet" href="/Content/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+
+    <link rel="stylesheet" href="/Content/dist/css/adminlte.min.css">
+    <link rel="stylesheet" href="~/Assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="login-box">
+        <!-- /.login-logo -->
+        <div class="card card_login " id="card-login">
+            <div class="card-body card_login-body">
+                <h2>Đăng nhập</h2>
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <div class="mb-3">
+                        <label for="Email" class="form-label form-label-login">Tài khoản</label>
+
+                        @Html.TextBoxFor(model => model.username, new { @class = "form-control form-input-login", @Placeholder = "Tài khoản", @autofocus = "autofocus", @id = "Email" })
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label form-label-login">Mật khẩu</label>
+                        @Html.PasswordFor(model => model.password, new { @class = "form-control form-input-login", @Placeholder = "Mật khẩu", @id = "Password" })
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="login-sub-option">
+                        <a id="card-login-link" class="login-sub-option-link">Quên mật khẩu</a>
+                    </div>
+                    <div class="btn-submit-container">
+                        <button type="submit" class="btn btn-primary login-submit-btn">Đăng nhập</button>
+
+                    </div>
+
+                }
+            </div>
+        </div>
+        <div class="card card_login form-disabled" id="card-forgot-password">
+            <div class="card-body card_login-body">
+                <h2>Quên mật khẩu</h2>
+                @using (Html.BeginForm("Login", "Login", FormMethod.Post))
+                {
+                    <div class="mb-3">
+                        <label for="Email" class="form-label form-label-login">Tài khoản</label>
+
+                        @Html.TextBoxFor(model => model.username, new { @class = "form-control form-input-login", @Placeholder = "Tài khoản", @autofocus = "autofocus", @id = "Email" })
+                        @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="mb-3">
+                        <label for="Password" class="form-label form-label-login">Mật khẩu</label>
+                        @Html.PasswordFor(model => model.password, new { @class = "form-control form-input-login", @Placeholder = "Mật khẩu", @id = "Password" })
+                        @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="login-sub-option">
+                        <a id="card-forgot-password-link" class="login-sub-option-link">Quên mật khẩu</a>
+                    </div>
+                    <div class="btn-submit-container">
+                        <button type="submit" class="btn btn-primary login-submit-btn">Login</button>
+
+                    </div>
+
+                }
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            handerLinkClick()
+
+        })
+        function handerLinkClick() {
+            let cardLoginLink = document.querySelector("#card-login-link")
+            let cardForgotPasswordLink = document.querySelector("#card-forgot-password-link")
+            console.log(cardLoginLink)
+            cardLoginLink.addEventListener('click', function () {
+                $('#card-forgot-password').removeClass('form-disabled')
+                $('#card-login').addClass('form-disabled')
+            })
+            cardForgotPasswordLink.addEventListener('click', function () {
+                $('#card-forgot-password').addClass('form-disabled')
+                $('#card-login').removeClass('form-disabled')
+            })
+        }
+    </script>
+</body>
+</html>
