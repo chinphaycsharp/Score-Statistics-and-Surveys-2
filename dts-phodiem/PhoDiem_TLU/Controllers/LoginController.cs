@@ -98,10 +98,8 @@ namespace PhoDiem_TLU.Controllers
         public ActionResult Logout()
         {
             Session[SeesionSystems.USER_TOKEN] = null;
-<<<<<<< HEAD
-=======
             Session[Constants.ROLE_EXAM_MANAGERMENT] = null;
->>>>>>> 6fd22aa (User Roles and Logout)
+
             return RedirectToAction("Index","Login");
         }
 

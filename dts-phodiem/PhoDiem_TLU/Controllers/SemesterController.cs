@@ -20,28 +20,23 @@ namespace PhoDiem_TLU.Controllers
         // GET: Semester
         public ActionResult Index(List<XLT_TLU.Models.tbl_subject> ss)
         {
-<<<<<<< HEAD
-            SelectList semester = new SelectList((from s in dbSet.tbl_semester select s), "id", "semester_name");
-            SelectList course_year = new SelectList((from c_y in dbSet.tbl_course_year select c_y), "id", "name");
-            SelectList subject = new SelectList((from s in dbSet.tbl_subject select s), "id", "subject_name");
-            SelectList semester_register_period = new SelectList((from s_r_p in dbSet.tbl_semester_register_period select s_r_p), "id", "name");
-=======
             if (Session[Constants.ROLE_EXAM_MANAGERMENT].ToString() == Constants.ROLE_EXAM_MANAGERMENT)
             {
                 SelectList semester = new SelectList((from s in dbSet.tbl_semester select s), "id", "semester_name");
                 SelectList course_year = new SelectList((from c_y in dbSet.tbl_course_year select c_y), "id", "name");
                 SelectList subject = new SelectList((from s in dbSet.tbl_subject select s), "id", "subject_name");
                 SelectList semester_register_period = new SelectList((from s_r_p in dbSet.tbl_semester_register_period select s_r_p), "id", "name");
->>>>>>> 6fd22aa (User Roles and Logout)
 
-            //SelectList cateList = new SelectList(cate, "ID", "THELOAI_NAME");
+                //SelectList cateList = new SelectList(cate, "ID", "THELOAI_NAME");
 
-            ViewBag.semester = semester;
-            ViewBag.course_year = course_year;
-            ViewBag.subject = subject;
-            ViewBag.semester_regitster_period = semester_register_period;
-            ViewBag.data = dbSet.tbl_subject.Where(s => s.id < 100).ToList();
-            return View();
+                ViewBag.semester = semester;
+                ViewBag.course_year = course_year;
+                ViewBag.subject = subject;
+                ViewBag.semester_regitster_period = semester_register_period;
+                ViewBag.data = dbSet.tbl_subject.Where(s => s.id < 100).ToList();
+                return View();
+            }
+            return RedirectToAction("Error", "Login");
         }
 
         public JsonResult getSubject(string semesterId, string periodId, string courseId)
