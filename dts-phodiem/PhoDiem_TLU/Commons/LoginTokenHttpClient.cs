@@ -20,6 +20,7 @@ namespace PhoDiem_TLU.Core
         private static readonly string url = "http://sv313.tlu.edu.vn:8080/education/oauth/token";
         //url lấy user ứng với token
         private static readonly string urlGet = "http://sv313.tlu.edu.vn:8080/education/api/users/getCurrentUser";
+        private static readonly string urlGetRole = "http://sv313.tlu.edu.vn:8080/education/api/roles/all";
         public static TokenResult _token = null;
         
         public static async Task<TokenResult> LoginDTSAsync(UserLoginViewModel model)
@@ -98,5 +99,25 @@ namespace PhoDiem_TLU.Core
             return false;
         }
        
+        public static IEnumerable<RoleViewModel> getAllRoles(TokenResult tokenResult)
+        {
+            using (var client = new HttpClient())
+            {
+                //Gán header để Authorization với Bearer Token
+                client.DefaultRequestHeaders.Add("Accept", "application/json");
+                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                        tokenResult.access_token);
+
+                var result = client.GetAsync(urlGetRole).Result.Content.ReadAsStringAsync();
+                var myObject = JValue.Parse(result.Result);
+                var roles = (JToken)myObject;
+                List<RoleViewModel> resultRoles = RoleViewModel.getRoles(roles);
+                if(resultRoles.Count > 0)
+                {
+                    return resultRoles.AsEnumerable();
+                }
+            }
+            return null;
+        }
     }
 }

@@ -82,7 +82,7 @@ namespace PhoDiem_TLU.Controllers
                 if(c)
                 {
                     Session.Add(Constants.ROLE_EXAM_MANAGERMENT, Constants.ROLE_EXAM_MANAGERMENT);
-                    return RedirectToAction("Index", "Semester");
+                    return RedirectToAction("Index", "User");
                 }
             }
             return View("Error");

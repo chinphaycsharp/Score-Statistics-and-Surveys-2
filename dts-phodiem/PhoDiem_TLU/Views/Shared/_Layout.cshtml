@@ -19,6 +19,7 @@
     <link rel="stylesheet" href="/Content/css/custom.css">
     <link rel="stylesheet" href="~/Assets/css/style.css" />
     <link rel="stylesheet" href="~/Assets/css/reponsive.css" />
+    <link href="~/Content/bootstrap-chosen.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
 </head>
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
@@ -163,13 +164,13 @@
                         <a href="#" class="d-block">TTTH</a>
                     </div>
                 </div>
-                
+
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
                         with font-awesome or any other icon font library -->
-                        
+
                         <li class="nav-item has-treeview nav__header-item ">
                             <div class="nav__header-item-content">
                                 <i class="fa fa-list nav__header-item-logo" aria-hidden="true"></i>
@@ -219,7 +220,7 @@
         </aside>
         <!-- /.sidebar-menu -->
         <!-- /RenderBody -->
-        <div class="content-wrapper"> 
+        <div class="content-wrapper">
             <!-- /.container-fluid -->
             <!--</section>-->
             <section class="content">
@@ -277,8 +278,10 @@
     <script src="/Content/plugins/datatables-bs4/js/dataTables.bootstrap4.min.js"></script>
     <script src="/Content/plugins/datatables-responsive/js/dataTables.responsive.min.js"></script>
     <script src="/Content/plugins/datatables-responsive/js/responsive.bootstrap4.min.js"></script>
+    <script src="/Scripts/chosen.jquery.min.js"></script>
     @RenderSection("calendar", false);
     @RenderSection("dasbroad", false);
     @RenderSection("CustomScripts", required: false)
+    @RenderSection("ScriptDropdown",required :false)
 </body>
 </html>
