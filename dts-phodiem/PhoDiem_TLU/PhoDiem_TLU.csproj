@@ -301,6 +301,7 @@
     <Compile Include="Controllers\SemesterController.cs" />
     <Compile Include="Controllers\StatisticsByCourseSubjectController.cs" />
     <Compile Include="Controllers\StatisticsController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Core\BaseController.cs" />
     <Compile Include="Commons\LoginTokenHttpClient.cs" />
     <Compile Include="DatabaseIO\DBIO.cs" />
@@ -6836,10 +6837,13 @@
     <Content Include="Content\adminlte\plugins\timepicker\bootstrap-timepicker.js" />
     <Content Include="Content\adminlte\plugins\timepicker\bootstrap-timepicker.min.css" />
     <Content Include="Content\adminlte\plugins\timepicker\bootstrap-timepicker.min.js" />
+    <Content Include="Content\bootstrap-chosen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\chosen-sprite%402x.png" />
+    <Content Include="Content\chosen-sprite.png" />
     <Content Include="Content\css\adminlte.css" />
     <Content Include="Content\css\adminlte.min.css" />
     <Content Include="Content\css\alt\adminlte.components.css" />
@@ -9426,7 +9430,11 @@
     <Content Include="Content\plugins\sweetalert2-theme-bootstrap-4\package.json" />
     <Content Include="Content\plugins\sweetalert2-theme-bootstrap-4\README.md" />
     <Content Include="Content\plugins\toastr\toastr.js.map" />
+    <Content Include="Content\bootstrap-chosen.scss" />
+    <Content Include="Content\bootstrap-chosen.less" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\chosen.jquery.js" />
+    <Content Include="Scripts\chosen.jquery.min.js" />
     <Content Include="Scripts\index.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -9458,6 +9466,7 @@
     <Content Include="Views\StatisticsByCourseSubject\MyView.cshtml" />
     <Content Include="Views\Login\Error.cshtml" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\User\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

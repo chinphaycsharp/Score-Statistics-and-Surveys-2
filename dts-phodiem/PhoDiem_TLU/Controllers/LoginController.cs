@@ -82,7 +82,7 @@ namespace PhoDiem_TLU.Controllers
                 if(c)
                 {
                     Session.Add(Constants.ROLE_EXAM_MANAGERMENT, Constants.ROLE_EXAM_MANAGERMENT);
-                    return RedirectToAction("Index", "Semester");
+                    return RedirectToAction("Index", "User");
                 }
             }
             return View("Error");
@@ -98,10 +98,8 @@ namespace PhoDiem_TLU.Controllers
         public ActionResult Logout()
         {
             Session[SeesionSystems.USER_TOKEN] = null;
-<<<<<<< HEAD
-=======
             Session[Constants.ROLE_EXAM_MANAGERMENT] = null;
->>>>>>> 6fd22aa (User Roles and Logout)
+
             return RedirectToAction("Index","Login");
         }
 
