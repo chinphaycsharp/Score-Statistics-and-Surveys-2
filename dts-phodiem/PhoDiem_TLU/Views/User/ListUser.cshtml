@@ -1,0 +1,97 @@
+﻿@using PhoDiem_TLU.Commons;
+@{
+
+    ViewBag.Title = "ListUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var pager = new Pager();
+    int pageNo = 0;
+    if(ViewBag.Pager != null)
+    {
+        pager = ViewBag.Pager;
+        pageNo = pager.CurrentPage;
+    }
+}
+
+<h2>ListUser</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table table-striped">
+    <tr>
+        <th style="font-size:16px">
+            <span>Thao Tac</span>
+        </th>
+        <th style="font-size:16px">
+            Ho va ten
+        </th>
+        <th style="font-size:16px">
+            Ten dang nhap
+        </th>
+        <th style="font-size:16px">
+            Email
+        </th>
+        <th style="font-size:16px">
+            Ngay chinh sua
+        </th>
+    </tr>
+
+    @foreach (var item in ViewBag.content)
+    {
+        <tr>
+            <td>
+                <button class="btn-warning btn"> @Html.ActionLink("Edit", "Edit", new { id = item.id }, htmlAttributes: new { @style = "color:white" }) </button>
+                <button class="btn-info btn">  @Html.ActionLink("Details", "Details", new { id = item.id }, htmlAttributes: new { @style = "color:white" })  </button>
+                <button class="btn-danger btn">@Html.ActionLink("Delete", "Delete", new { id = item.id }, htmlAttributes: new { @style = "color:white" }) </button>
+            </td>
+            <td style="font-size:16px">
+                @item.displayName
+            </td>
+            <td style="font-size:16px">
+                @item.username
+            </td>
+            <td style="font-size:16px">
+                @item.email
+            </td>
+            <td style="font-size:16px">
+                @item.modifyDate
+            </td>
+        </tr>
+    }
+
+</table>
+<div class="card-footer">
+    @if(pager.TotalPages > 0)
+            {
+    <ul class="pagination justify-content-end">
+
+        @if (pager.CurrentPage > 1)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = 1})">Fisrt</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage - 1})">Previous</a>
+            </li>
+        }
+
+
+        @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+        {
+            <li class="page-item @(pge == pager.CurrentPage ? "active": "")">
+                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pge })">@pge</a>
+            </li>
+        }
+
+        @if (pager.CurrentPage < pager.TotalPages)
+        {
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage +1})">Next</a>
+            </li>
+            <li class="page-item">
+                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.TotalPages})">Last</a>
+            </li>
+        }
+    </ul>
+            }
+</div>
