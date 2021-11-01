@@ -999,3 +999,5 @@ D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\bin\Newtonsof
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\bin\Antlr3.Runtime.pdb
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\obj\Debug\PhoDiem_TLU.csproj.CopyComplete
+D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\bin\System.Net.Http.Json.dll
+D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\PhoDiem_TLU\bin\System.Net.Http.Json.xml

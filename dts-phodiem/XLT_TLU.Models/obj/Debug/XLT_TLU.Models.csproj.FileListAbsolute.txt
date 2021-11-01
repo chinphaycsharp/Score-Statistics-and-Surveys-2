@@ -204,8 +204,8 @@ D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\bin\Entity
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\bin\EPPlus.xml
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\bin\Microsoft.IO.RecyclableMemoryStream.xml
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csprojAssemblyReference.cache
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CoreCompileInputs.cache
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csproj.CopyComplete
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.dll
 D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.pdb
+D:\LapTrinh\Score-Statistics-and-Surveys-2\dts-phodiem\XLT_TLU.Models\obj\Debug\XLT_TLU.Models.csprojAssemblyReference.cache
