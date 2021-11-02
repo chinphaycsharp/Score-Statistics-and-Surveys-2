@@ -1,24 +1,44 @@
-﻿@using PhoDiem_TLU.Commons;
+﻿@model PhoDiem_TLU.ViewModels.UserViewModel
+@using PhoDiem_TLU.Commons;
 @{
-
     ViewBag.Title = "ListUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var pager = new Pager();
     int pageNo = 0;
-    if(ViewBag.Pager != null)
+    if (ViewBag.Pager != null)
     {
         pager = ViewBag.Pager;
         pageNo = pager.CurrentPage;
     }
 }
 
-<h2>ListUser</h2>
+@section ScriptDropdown {
+    <script>
+        $(function () {
+            $('#multiDropdown').chosen(
+                {
+                    width: "100%"
+                }
+            );
+        })
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+    </script>
+    <script src="~/Assets/js/User.js"></script>
+}
+
+<button type="button" class="btn btn-success" style="margin-bottom:10px;margin-top:10px">
+    @Html.ActionLink("Them moi", "Index", "", htmlAttributes: new { @style = "color:white" })
+</button>
+
+<button type="button" id="btn-delete-user" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal" style="margin-bottom:10px;margin-top:10px">
+    Xoa
+</button>
+
 <table class="table table-striped">
     <tr>
+        <th>
+
+        </th>
         <th style="font-size:16px">
             <span>Thao Tac</span>
         </th>
@@ -39,6 +59,9 @@
     @foreach (var item in ViewBag.content)
     {
         <tr>
+            <td>
+                <input type="checkbox" class="form-control ckbiduser" data-id="@item.id" />
+            </td>
             <td>
                 <button class="btn-warning btn"> @Html.ActionLink("Edit", "Edit", new { id = item.id }, htmlAttributes: new { @style = "color:white" }) </button>
                 <button class="btn-info btn">  @Html.ActionLink("Details", "Details", new { id = item.id }, htmlAttributes: new { @style = "color:white" })  </button>
@@ -61,37 +84,58 @@
 
 </table>
 <div class="card-footer">
-    @if(pager.TotalPages > 0)
+    @if (pager.TotalPages > 0)
+    {
+        <ul class="pagination justify-content-end">
+
+            @if (pager.CurrentPage > 1)
             {
-    <ul class="pagination justify-content-end">
-
-        @if (pager.CurrentPage > 1)
-        {
-            <li class="page-item">
-                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = 1})">Fisrt</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage - 1})">Previous</a>
-            </li>
-        }
-
-
-        @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
-        {
-            <li class="page-item @(pge == pager.CurrentPage ? "active": "")">
-                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pge })">@pge</a>
-            </li>
-        }
-
-        @if (pager.CurrentPage < pager.TotalPages)
-        {
-            <li class="page-item">
-                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage +1})">Next</a>
-            </li>
-            <li class="page-item">
-                <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.TotalPages})">Last</a>
-            </li>
-        }
-    </ul>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ListUser", "User", new { page = 1})">Fisrt</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage - 1})">Previous</a>
+                </li>
             }
+
+
+            @for (var pge = pager.StartPage; pge <= pager.EndPage; pge++)
+            {
+                <li class="page-item @(pge == pager.CurrentPage ? "active": "")">
+                    <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pge })">@pge</a>
+                </li>
+            }
+
+            @if (pager.CurrentPage < pager.TotalPages)
+            {
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.CurrentPage +1})">Next</a>
+                </li>
+                <li class="page-item">
+                    <a class="page-link" href="@Url.Action("ListUser", "User", new { page = pager.TotalPages})">Last</a>
+                </li>
+            }
+        </ul>
+    }
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Xoa nguoi dung</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <h4> Ban co chac muon xoa nguoi dung nay ?</h4>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+                <button type="button" id="btn-confirm" class="btn btn-primary">Xac nhan</button>
+            </div>
+        </div>
+    </div>
 </div>

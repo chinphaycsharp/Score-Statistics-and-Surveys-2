@@ -24,7 +24,8 @@ namespace PhoDiem_TLU.Core
         private static readonly string urlGetRole = "http://sv313.tlu.edu.vn:8080/education/api/roles/all";
         private static readonly string urlAddUser = "http://sv313.tlu.edu.vn:8080/education/api/users";
         private static readonly string urlGetListUser = "http://sv313.tlu.edu.vn:8080/education/api/users/";
- 
+        private static readonly string urlDeleteUser = "http://sv313.tlu.edu.vn:8080/education/api/user/ext/remove";
+
         public static TokenResult _token = null;
         
         public static async Task<TokenResult> LoginDTSAsync(UserLoginViewModel model)
@@ -172,6 +173,27 @@ namespace PhoDiem_TLU.Core
                 }
             }
             return null;
+        }
+
+        public static bool DeleteUsers(TokenResult tokenResult, int[] selectedUsers)
+        {
+  
+            using (var client = new HttpClient())
+            {
+                //Gán header để Authorization với Bearer Token
+                var request = new HttpRequestMessage
+                {
+                    Method = HttpMethod.Delete,
+                    RequestUri = new Uri(urlDeleteUser),
+                    Content = new StringContent(JsonConvert.SerializeObject(selectedUsers), Encoding.UTF8, "application/json")
+
+                };
+                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", tokenResult.access_token);
+
+                var result = client.SendAsync(request).Result;
+
+                return result.IsSuccessStatusCode;
+            }
         }
     }
 }
