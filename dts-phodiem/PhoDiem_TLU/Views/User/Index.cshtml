@@ -18,14 +18,7 @@
 
     </script>
 
-    <script>
-        function showMessage() {
-            if (@ViewBag.MessageError != null) {
-                alert(@ViewBag.MessageError);
-            }
-        }
-        showMessage();
-    </script>
+
 }
 
 @using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
@@ -34,7 +27,6 @@
 
 <div class="form-horizontal">
     <h4>Thêm moi nguoi dung</h4>
-    <hr />
     @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
     <div class="form-group">

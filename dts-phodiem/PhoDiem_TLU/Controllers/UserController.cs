@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace PhoDiem_TLU.Controllers
 {
-    public class UserController : Controller
+    public class UserController : BaseController
     {
         private static int pageSize = 10;
         public ActionResult ListUser(int page = 1)
@@ -30,8 +30,31 @@ namespace PhoDiem_TLU.Controllers
 
             ViewBag.content = pagination.content;
             ViewBag.Pager = pager;
+            IEnumerable<RoleViewModel> roles = LoginTokenHttpClient.getAllRoles(tokenResult).AsEnumerable();
+            ViewBag.type = roles.GetType();
+            UserViewModel model = new UserViewModel();
+            model.roles = roles;
+            SelectList r = new SelectList((from s in roles select s), "id", "name");
+            ViewBag.roles = r;
+            var genderList = new List<SelectListItem>
+                {
+                    new SelectListItem { Value="M", Text = "1"},
+                    new SelectListItem { Value="F", Text = "0"},
+                     new SelectListItem { Value="Khac", Text = "-1"}
+                };
 
-            return View(pagination);
+            List<SelectListItem> list = new List<SelectListItem>();
+            foreach (var row in genderList)
+            {
+                list.Add(new SelectListItem()
+                {
+                    Text = row.Value,
+                    Value = row.Value
+                });
+            }
+
+            ViewBag.genderList = ToSelectList(list, "Value", "Value");
+            return View(model);
         
         }
 
@@ -128,14 +151,27 @@ namespace PhoDiem_TLU.Controllers
                 user.roles = roleViews.AsEnumerable();
                 if(user.password != user.confirmPassword)
                 {
-                    ViewBag.MessageError = "Nhap lai mat khau chua dung";
-                    return RedirectToAction("Index", "User");
+                    SetAlert("Nhap lai mat khau khong dung", "warning");
+                    return RedirectToAction("Index");
                 }
                 Task<bool> check = LoginTokenHttpClient.AddUserAsync(user,tokenResult);
+                SetAlert("Them nguoi dung thanh cong", "success");
+                return RedirectToAction("ListUser", "User");
             }
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("ListUser", "User");
         }
 
-     
+        [HttpPost]
+        public ActionResult Delete(int [] selectedUsers)
+        {
+            TokenResult tokenResult = (TokenResult)Session[SeesionSystems.USER_TOKEN];
+            bool result = LoginTokenHttpClient.DeleteUsers(tokenResult,selectedUsers);
+            if(result)
+            {
+                SetAlert("Xoa nguoi dung thanh cong !", "success");
+                return RedirectToAction("ListUser", "User");
+            }
+            return RedirectToAction("ListUser", "User");
+        }
     }
 }
