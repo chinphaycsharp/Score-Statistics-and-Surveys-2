@@ -22,7 +22,7 @@ namespace PhoDiem_TLU.ViewModels
         public string createBy { get; set; }
         [DisplayName("Ho va ten")]
         public string displayName { get; set; }
-        public DateTime dob { get; set; }
+        public string dob { get; set; }
         [DisplayName("Email")]
         public string email { get; set; }
         [DisplayName("Ho")]
@@ -62,7 +62,7 @@ namespace PhoDiem_TLU.ViewModels
                 user.createDate = Constants.HandleJtokenToDate(item["createDate"]) ;
                 user.createBy = (string)item["createdBy"];
                 user.displayName = (string)item["displayName"];
-                user.dob = Constants.HandleJtokenToDate((string)item["dob"]);
+                user.dob = (string)item["dob"];
                 user.email = (string)item["email"];
                 user.firstName = (string)item["firstName"];
                 user.lastName = (string)item["lastName"];
@@ -93,6 +93,77 @@ namespace PhoDiem_TLU.ViewModels
             }
             return users;
         }
+
+       
+
+        public static UserViewModel getUser(JToken input)
+        {
+            UserViewModel user = new UserViewModel();
+            user.createDate = Constants.HandleJtokenToDate(input["createDate"]);
+            user.active = (int)input["active"];
+            user.changePass = (bool)input["changePass"];
+            user.createBy = (string)input["createdBy"];
+            user.displayName = (string)input["displayName"];
+            user.email = (string)input["email"];
+            user.id = (int)input["id"];
+            user.modifiedBy = (string)input["modifiedBy"];
+            user.modifyDate = Constants.HandleJtokenToDate(input["modifyDate"]);
+            user.password = (string)input["password"];
+            user.confirmPassword = (string)input["confirmPassword"];
+            user.username = (string)input["username"];
+            user.birthPlace = (string)input["birthPlace"];
+            user.dob = (string)input["dob"];
+            var person = input["person"];
+            if(person.HasValues)
+            {
+                user.person.createDate = Constants.HandleJtokenToDate(person["createDate"]);
+                user.person.email = (string)person["email"];
+                user.person.createBy = (string)person["createBy"];
+                user.person.displayName = (string)person["displayName"];
+                user.person.firstName = (string)person["firstName"];
+                user.person.gender = (string)person["gender"];
+                user.person.id = (long)person["id"];
+                user.person.lasttName = (string)person["lastName"];
+                user.person.modifyDate = Constants.HandleJtokenToDate(person["modifyDate"]);
+                user.person.userId = (string)person["userId"];
+                user.person.phoneNumber = (string)person["phoneNumber"];
+                user.person.phoneNumber = (string)person["idNumberIssueDate"];
+                user.person.phoneNumber = (string)person["idNumberIssueBy"];
+                user.person.phoneNumber = (string)person["idNumber"];
+                user.person.phoneNumber = (string)person["birthDateString"];
+                user.person.phoneNumber = (string)person["birthDate"];
+                var address = person["address"];
+                if(address.HasValues)
+                {
+                    AddressViewModel add = new AddressViewModel();
+                    List<AddressViewModel> addresses = new List<AddressViewModel>();
+                    foreach (var item in address)
+                    {
+                        add.address = (string)item["address"];
+                        add.id = (long)item["id"];
+                        add.personId = (long)item["personId"];
+                        addresses.Add(add);
+                    }
+                    user.person.address = addresses;
+                }
+            }
+            var roles = input["roles"];
+            if(roles.HasValues)
+            {
+                List<RoleViewModel> roleViews = new List<RoleViewModel>();
+                foreach (var item in roles)
+                {
+                    RoleViewModel r = new RoleViewModel();
+                    r.authority = (string)item["authority"];
+                    r.description = (string)item["description"];
+                    r.id = (int)item["id"];
+                    r.name = (string)item["name"];
+                    roleViews.Add(r);
+                }
+                user.roles = roleViews.AsEnumerable();
+            }
+            return user;
+        }
     }
 
     public class PersonViewModel
@@ -116,7 +187,9 @@ namespace PhoDiem_TLU.ViewModels
         public string email { get; set; }
         public DateTime endDate { get; set; }
         public string ethnics { get; set; }
+        [DisplayName("Họ")]
         public string lasttName { get; set; }
+        [DisplayName("Tên")]
         public string firstName { get; set; }
         public string gender { get; set; }
         public string modifyIp { get; set; }
@@ -133,6 +206,19 @@ namespace PhoDiem_TLU.ViewModels
 
     public class AddressViewModel
     {
-
+        public long id { get; set; }
+        public string address { get; set; }
+        public string address2 { get; set; }
+        public string city { get; set; }
+        public string province { get; set; }
+        public string country { get; set; }
+        public string postalCode { get; set; }
+        public string latitude { get; set; }
+        public string longtitude { get; set; }
+        public long personId { get; set; }
+        public string type { get; set; }
+        public long provinceId { get; set; }
+        public long cityId { get; set; }
+        public long villageId { get; set; }
     }
 }
