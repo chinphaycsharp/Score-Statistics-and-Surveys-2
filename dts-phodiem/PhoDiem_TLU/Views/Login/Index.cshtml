@@ -28,27 +28,29 @@
     <div class="login-box">
         <!-- /.login-logo -->
         <div class="card card_login " id="card-login">
+            <div class="card_login-logo"></div>
             <div class="card-body card_login-body">
                 <h2>Đăng nhập</h2>
                 @using (Html.BeginForm("Login", "Login", FormMethod.Post))
                 {
-                    <div class="mb-3">
+                    <div class="mb-3 card_login-form">
                         <label for="Email" class="form-label form-label-login">Tài khoản</label>
 
                         @Html.TextBoxFor(model => model.username, new { @class = "form-control form-input-login", @Placeholder = "Tài khoản", @autofocus = "autofocus", @id = "Email" })
                         @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
                     </div>
-                    <div class="mb-3">
+                    <div class="mb-3 card_login-form">
                         <label for="Password" class="form-label form-label-login">Mật khẩu</label>
                         @Html.PasswordFor(model => model.password, new { @class = "form-control form-input-login", @Placeholder = "Mật khẩu", @id = "Password" })
                         @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
                     </div>
-                    <div class="login-sub-option">
-                        <a id="card-login-link" class="login-sub-option-link">Quên mật khẩu</a>
-                    </div>
+
                     <div class="btn-submit-container">
                         <button type="submit" class="btn btn-primary login-submit-btn">Đăng nhập</button>
-
+                    </div>
+                    <div class="login-sub-option">
+                        <p>Bạn chưa có tài khoản? <a href="">Gửi yêu cầu</a> tạo tài khoản mới</p>
+                        <a id="card-login-link" class="login-sub-option-link">Quên mật khẩu</a>
                     </div>
 
                 }

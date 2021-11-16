@@ -1,11 +1,32 @@
+﻿Skip to content
+quyetkaito68
+/
+Score-Statistics-and-Surveys
+Public
+Code
+Issues
+Pull requests
+Actions
+Projects
+Wiki
+More
+Score-Statistics-and-Surveys/dts-phodiem/PhoDiem_TLU/Assets/css/style.css
+@DanhDucDao
+DanhDucDao update Login View
+…
+History
+4 contributors
+@dinhkhanh0911@DanhDucDao@toankt2k@quyetkaito68
+322 lines (270 sloc) 5.16 KB
+
 ﻿:root {
-    --text-color:#777;
+    --text-color: #777;
     --primary: #007BFF;
 }
 /* width */
 ::-webkit-scrollbar {
     width: 10px;
-    height:10px;
+    height: 10px;
 }
 
 /* Track */
@@ -22,17 +43,20 @@
 
 body {
 }
-.wrapper{
-    height:100vh;
+
+.wrapper {
+    height: 100vh;
 }
-.wrapper .content-wrapper {
-    margin-top: 3.5rem;
-    min-height: calc(100vh - 4.8rem);
-}
+
+    .wrapper .content-wrapper {
+        margin-top: 3.5rem;
+        min-height: calc(100vh - 4.8rem);
+    }
 /* navbar */
 .nav__header-item {
     position: relative;
 }
+
 .nav__header-item-content {
     width: 100%;
     display: flex;
@@ -44,91 +68,104 @@ body {
     padding-left: 20px;
     padding-right: 15px;
 }
+
 .nav__item-sublist {
     padding-left: 0;
-    position:absolute;
-    top:100%;
-    left:0;
-    width:100%;
-    cursor:pointer;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    cursor: pointer;
 }
-.nav__header-item:hover{
-    background-color:#494E53;
+
+.nav__header-item:hover {
+    background-color: #494E53;
 }
-.nav__header-item__option{
-    padding-left:25px;
+
+.nav__header-item__option {
+    padding-left: 25px;
 }
 
 .nav__header-item-logo {
     font-size: 1.1rem;
 }
+
 .nav__header-item__option > i {
     margin-right: 5px;
-    
 }
-.nav__header-item__text{
-    flex:1;
-    padding-left:10px;
-}
-.nav__header-item-icon {
 
-    color: #c2c7d0;
-    font-size:0.9rem;
+.nav__header-item__text {
+    flex: 1;
+    padding-left: 10px;
 }
-#main_content{
+
+.nav__header-item-icon {
+    color: #c2c7d0;
+    font-size: 0.9rem;
+}
+
+#main_content {
     padding: 20px 20px 0 20px;
 }
-.page-container{
-    background-color:#fff;
-    border-radius:4px;
-    padding:10px 40px 0 40px;
+
+.page-container {
+    background-color: #fff;
+    border-radius: 4px;
+    padding: 10px 40px 0 40px;
 }
 /*form*/
 .form__select {
     margin-bottom: 30px;
 }
+
 .form__select-header {
-    text-align:center;
-    margin-bottom:50px;
+    text-align: center;
+    margin-bottom: 50px;
     background-color: var(--primary);
-    margin-left:-30px;
-    margin-right:-30px;
-      
+    margin-left: -30px;
+    margin-right: -30px;
 }
-.form__select-header-Text{
-    color:#ffff;
-    margin-bottom:0px;
+
+.form__select-header-Text {
+    color: #ffff;
+    margin-bottom: 0px;
     padding: 10px;
 }
-.form__select-input{
-    display:flex;
-    justify-content:center;
+
+.form__select-input {
+    display: flex;
+    justify-content: center;
 }
-.form__select-input form{
-    width:100%;
-    margin-bottom:20px;
-}
-.show-data__option
-{
+
+    .form__select-input form {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+.show-data__option {
     padding: 0 100px;
-    margin-bottom:20px;
-    width:100%;
+    margin-bottom: 20px;
+    width: 100%;
 }
-.form__select-input-container{
-    
+
+.form__select-input-container {
 }
+
 .select__group {
-    display:flex;
+    display: flex;
 }
-.form-control{
-    margin-bottom:20px;
-    height:30px;
-    margin-right:20px;
+
+.form-control {
+    margin-bottom: 20px;
+    height: 30px;
+    margin-right: 20px;
 }
+
 .select__btn-container {
     display: flex;
     justify-content: center;
 }
+
 .show-data__option-btn {
     height: 30px;
     min-width: 100px;
@@ -140,52 +177,52 @@ body {
     background-color: #007BFF;
     color: white;
 }
-.show-data__option-btn:hover,
-.chart__mark-show__btn:hover
-{
-    background-color: #439bfa;
-    color: white;
-}
-.Table__data{
-    margin-bottom:20px;
-    
-    
+
+    .show-data__option-btn:hover,
+    .chart__mark-show__btn:hover {
+        background-color: #439bfa;
+        color: white;
+    }
+
+.Table__data {
+    margin-bottom: 20px;
 }
 /* chart */
 .chart__mark {
     width: 100%;
 }
-.chartjs-size-monitor{
-    width:100%;
-    text-align:center;
-}
-.chart__mark-btn-group{
-    width:100%;
-    display:flex;
-    justify-content:center;
-    
 
+.chartjs-size-monitor {
+    width: 100%;
+    text-align: center;
+}
+
+.chart__mark-btn-group {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .chart__mark-show__btn {
     color: white;
-    border-radius:0;
+    border-radius: 0;
     background-color: #007BFF;
-    flex-basis:100%;
+    flex-basis: 100%;
 }
+
 .chart__mark-char {
     text-align: center;
     display: flex;
     justify-content: center;
     padding: 5px;
 }
+
 .chart__mark-char-pie,
 .chart__mark-char-bar {
-    max-height:500px;
+    max-height: 500px;
     width: 1000px;
-    position:relative;
-    overflow-x:auto;
-    
+    position: relative;
+    overflow-x: auto;
 }
 
 .btncontainer {
@@ -197,56 +234,109 @@ body {
 
 .login-box {
     background-color: #E9ECEF;
-    position:fixed;
-    top:0;
-    bottom:0;
-    width:100%;
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
+
 .card_login {
     height: 500px;
-    width: 500px;
+    width: 800px;
     margin: 0;
-    padding: 20px;
+    /* padding: 20px; */
     font-family: 'Roboto', sans-serif;
     margin: 0 auto;
 }
-.card_login h2{
-    text-align:center;
-    color:var(--primary);
-    margin-bottom:30px;
-}
+
+    .card_login h2 {
+        text-align: center;
+        color: var(--primary);
+        margin-bottom: 30px;
+    }
+
 .form-label-login {
-    color: var(--text-color);
-    font-size: 1.1rem;
+    color: #000000a8;
+    font-size: 1rem;
     font-weight: 400 !important;
+    font-family: inherit;
+    text-transform: uppercase;
 }
-.form-input-login{
-    height:50px;
-    font-size:1.2rem;
+
+.form-input-login {
+    height: 50px;
+    font-size: 1.2rem;
 }
-.form-input-login:focus{
-    font-size:1.2rem;
+
+    .form-input-login:focus {
+        font-size: 1.2rem;
+    }
+
+.login-sub-option {
+    margin-top: 30px;
+    color: #000000a8;
+    font-size: 1rem;
+    font-weight: 400 !important;
+    font-family: inherit;
 }
-.login-sub-option{
-    display:flex;
-    justify-content:right;
-    
+
+    .login-sub-option .login-sub-option-link {
+        color: #007bff !important;
+        cursor: pointer;
+    }
+
+.btn-submit-container {
+    margin-top: 40px;
 }
-.login-sub-option .login-sub-option-link{
-    color:red;
-    cursor:pointer;
-}
-.btn-submit-container{
-    text-align:center;
-    margin-top:30px;
-}
+
 .login-submit-btn {
     min-width: 150px;
     padding: 10px;
+    border-radius: 30px;
+    background-color: #323232;
+    text-transform: uppercase;
+    border: 0px;
+    transition: 0.4s all;
 }
-.form-disabled{
-    display:none;
+
+    .login-submit-btn:hover {
+        background-color: #0e98ba;
+    }
+
+.form-disabled {
+    display: none;
 }
+
+.card_login-logo {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: aqua;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-image: linear-gradient(to right,#68D8F4,#85F6CD);
+}
+
+.card_login-body {
+    width: 50%;
+    position: absolute;
+    right: 0;
+    height: 100%;
+}
+
+.card_login-form {
+    margin-top: 20px;
+}
+
+    .card_login-form input {
+        display: block;
+        outline: none;
+        border: 0px;
+        border-bottom: 1px solid #808080e0;
+        width: 100%;
+        padding: 15px 0 15px 10px;
+    }
+
