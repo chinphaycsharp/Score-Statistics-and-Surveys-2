@@ -10,6 +10,7 @@ namespace PhoDiem_TLU.Commons
     public class Constants
     {
         public static string ROLE_EXAM_MANAGERMENT = "ROLE_EXAM_MANAGERMENT";
+        public static string ROLE_ADMIN = "ROLE_ADMIN";
 
         public static DateTime HandleJtokenToDate(JToken token)
         {

@@ -1,5 +1,6 @@
 ﻿@model PhoDiem_TLU.ViewModels.UserViewModel
 @using PhoDiem_TLU.Commons;
+@using PhoDiem_TLU.ViewModels
 @{
     ViewBag.Title = "ListUser";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -34,6 +35,7 @@
     Xoa
 </button>
 
+
 <table class="table table-striped">
     <tr>
         <th>
@@ -63,9 +65,7 @@
                 <input type="checkbox" class="form-control ckbiduser" data-id="@item.id" />
             </td>
             <td>
-                <button class="btn-warning btn"> @Html.ActionLink("Edit", "Edit", new { id = item.id }, htmlAttributes: new { @style = "color:white" }) </button>
-                <button class="btn-info btn">  @Html.ActionLink("Details", "Details", new { id = item.id }, htmlAttributes: new { @style = "color:white" })  </button>
-                <button class="btn-danger btn">@Html.ActionLink("Delete", "Delete", new { id = item.id }, htmlAttributes: new { @style = "color:white" }) </button>
+                <button class="btn-warning btn edit-user" data-id="@item.id">Sửa</button>
             </td>
             <td style="font-size:16px">
                 @item.displayName
@@ -138,4 +138,74 @@
             </div>
         </div>
     </div>
+</div>
+
+<!-- Modal -->
+<!--<div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Cap nhap thong tin</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="inputEmail4">Ho va ten</label>
+                            <input type="text" class="form-control" id="fullname" value="">
+                        </div>
+                        <div class="col-md-10">
+
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="inputAddress">Email</label>
+                        <input type="text" class="form-control" id="email" value="">
+                    </div>
+                    <div class="form-group">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="active" value="">
+                            <label class="form-check-label" for="gridCheck">
+                                Kich hoat
+                            </label>
+                        </div>
+                    </div>
+                    <div class="form-group col-md-4">
+                        <label for="inputState">Vai tro</label>
+                        <ul id="roles" style="width: 150px" class=" form-group">
+                        </ul>
+                        <div class="form-group">
+                            <label>Quyền</label>
+
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Dong</button>
+            </div>
+        </div>
+    </div>
+</div>-->
+<!-- Modal -->
+<div class="modal fade" id="myModal1">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title">Xem và sửa bản ghi</h3>
+            </div>
+            <div class="modal-body" id="myModalBodyDiv1">
+
+
+            </div>
+        </div>
+
+    </div>
+
 </div>

@@ -68,21 +68,48 @@ namespace PhoDiem_TLU.Core
         public static bool GetCurrentUser(TokenResult tokenResult)
         {
             //Tương tự như hàm trên sử dụng httpclient để giao tiếp với server
-            using (var client = new HttpClient())
+            if(tokenResult != null)
             {
-                //Gán header để Authorization với Bearer Token
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                        tokenResult.access_token);
-
-                var result = client.GetAsync(urlGet).Result.Content.ReadAsStringAsync();
-
-                if (result != null)
+                using (var client = new HttpClient())
                 {
-                    bool check = handleRoles(result.Result);
-                    return check;
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGet).Result.Content.ReadAsStringAsync();
+
+                    if (result != null)
+                    {
+                        bool check = handleRoles(result.Result);
+                        return check;
+                    }
                 }
             }
             return false;
+        }
+
+        public static UserLogin GetUser(TokenResult tokenResult)
+        {
+            //Tương tự như hàm trên sử dụng httpclient để giao tiếp với server
+            if (tokenResult != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGet).Result.Content.ReadAsStringAsync();
+                    var myObject = JValue.Parse(result.Result);
+                    var jToken = (JToken)myObject;
+                    var roles = jToken["roles"];
+                    UserLogin user = new UserLogin();
+                    List<RoleViewModel> resultRoles = RoleViewModel.getRoles(roles);
+                    user.roles = resultRoles;
+                    return user;
+                }
+            }
+            return new UserLogin();
         }
 
         private static bool handleRoles(string jsoninput)
@@ -106,20 +133,23 @@ namespace PhoDiem_TLU.Core
        
         public static IEnumerable<RoleViewModel> getAllRoles(TokenResult tokenResult)
         {
-            using (var client = new HttpClient())
+            if(tokenResult != null)
             {
-                //Gán header để Authorization với Bearer Token
-                client.DefaultRequestHeaders.Add("Accept", "application/json");
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                        tokenResult.access_token);
-
-                var result = client.GetAsync(urlGetRole).Result.Content.ReadAsStringAsync();
-                var myObject = JValue.Parse(result.Result);
-                var roles = (JToken)myObject;
-                List<RoleViewModel> resultRoles = RoleViewModel.getRoles(roles);
-                if(resultRoles.Count > 0)
+                using (var client = new HttpClient())
                 {
-                    return resultRoles.AsEnumerable();
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Add("Accept", "application/json");
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGetRole).Result.Content.ReadAsStringAsync();
+                    var myObject = JValue.Parse(result.Result);
+                    var roles = (JToken)myObject;
+                    List<RoleViewModel> resultRoles = RoleViewModel.getRoles(roles);
+                    if (resultRoles.Count > 0)
+                    {
+                        return resultRoles.AsEnumerable();
+                    }
                 }
             }
             return null;
@@ -127,73 +157,174 @@ namespace PhoDiem_TLU.Core
 
         public static async Task<bool> AddUserAsync(UserAddViewModel model, TokenResult tokenResult)
         {
-            using (var client = new HttpClient())
+            if (tokenResult != null)
             {
-                //Gán header để Authorization với Bearer Token
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                        tokenResult.access_token);
-                string json = JsonConvert.SerializeObject(model);
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+                    string json = JsonConvert.SerializeObject(model);
 
-                //var buffer = System.Text.Encoding.UTF8.GetBytes(json);
-                //var byteContent = new ByteArrayContent(buffer);
-                var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+                    //var buffer = System.Text.Encoding.UTF8.GetBytes(json);
+                    //var byteContent = new ByteArrayContent(buffer);
+                    var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
 
 
-                var result = client.PostAsync(urlAddUser, stringContent).Result;
+                    var result = client.PostAsync(urlAddUser, stringContent).Result;
 
-                return result.IsSuccessStatusCode;
+                    return result.IsSuccessStatusCode;
+                }
             }
+            return await Task.FromResult(false);
+        }
+
+        public static async Task<bool> UpdateUserAsync(UpdateUserViewModel model, TokenResult tokenResult)
+        {
+            if (tokenResult != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+                    string json = JsonConvert.SerializeObject(model);
+
+                    //var buffer = System.Text.Encoding.UTF8.GetBytes(json);
+                    //var byteContent = new ByteArrayContent(buffer);
+                    var stringContent = new StringContent(json, Encoding.UTF8, "application/json");
+
+
+                    var result = client.PostAsync(urlAddUser, stringContent).Result;
+
+                    return result.IsSuccessStatusCode;
+                }
+            }
+            return await Task.FromResult(false);
         }
 
         public static DataViewModels GetListUser(TokenResult tokenResult,int? page, int pageSize)
         {
-            using (var client = new HttpClient())
+            UserLogin user = LoginTokenHttpClient.GetUser(tokenResult);
+            bool isAdmin = false;
+            foreach (var item in user.roles)
             {
-                //Gán header để Authorization với Bearer Token
-                client.DefaultRequestHeaders.Add("Accept", "application/json");
-                client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                        tokenResult.access_token);
-
-                var result = client.GetAsync(urlGetListUser+ page.ToString() + "/" + pageSize.ToString()).Result.Content.ReadAsStringAsync();
-                var myObject = JValue.Parse(result.Result);
-                var jToken = (JToken)myObject;
-                //List<UserViewModel> users = new List<UserViewModel>();
-                if (jToken["content"] != null)
+                if(item.name == Constants.ROLE_ADMIN)
                 {
-                    DataViewModels pagination = new DataViewModels();
-                    var content = jToken["content"];
-                    pagination.content = UserViewModel.HandleJtokenToUserResult(content);
-
-                    pagination.size = (int)jToken["size"];
-                    pagination.numberOfElements = (int)jToken["numberOfElements"];
-                    pagination.totalElements = (int)jToken["totalElements"];
-                    pagination.totalPages = (int) jToken["totalPages"];
-                    return pagination;
+                    isAdmin = true;
+                    break;
                 }
+            }
+            if(isAdmin)
+            {
+                if (tokenResult != null)
+                {
+                    using (var client = new HttpClient())
+                    {
+                        //Gán header để Authorization với Bearer Token
+                        client.DefaultRequestHeaders.Add("Accept", "application/json");
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                                tokenResult.access_token);
+
+                        var result = client.GetAsync(urlGetListUser + page.ToString() + "/" + pageSize.ToString()).Result.Content.ReadAsStringAsync();
+                        var myObject = JValue.Parse(result.Result);
+                        var jToken = (JToken)myObject;
+                        //List<UserViewModel> users = new List<UserViewModel>();
+                        if (jToken["content"] != null)
+                        {
+                            DataViewModels pagination = new DataViewModels();
+                            var content = jToken["content"];
+                            pagination.content = UserViewModel.HandleJtokenToUserResult(content);
+
+                            pagination.size = (int)jToken["size"];
+                            pagination.numberOfElements = (int)jToken["numberOfElements"];
+                            pagination.totalElements = (int)jToken["totalElements"];
+                            pagination.totalPages = (int)jToken["totalPages"];
+                            return pagination;
+                        }
+                    }
+                }
+            }
+            else
+            {
+                return null;
             }
             return null;
         }
 
         public static bool DeleteUsers(TokenResult tokenResult, int[] selectedUsers)
         {
-  
-            using (var client = new HttpClient())
+            if(tokenResult != null)
             {
-                //Gán header để Authorization với Bearer Token
-                var request = new HttpRequestMessage
+                using (var client = new HttpClient())
                 {
-                    Method = HttpMethod.Delete,
-                    RequestUri = new Uri(urlDeleteUser),
-                    Content = new StringContent(JsonConvert.SerializeObject(selectedUsers), Encoding.UTF8, "application/json")
+                    //Gán header để Authorization với Bearer Token
+                    var request = new HttpRequestMessage
+                    {
+                        Method = HttpMethod.Delete,
+                        RequestUri = new Uri(urlDeleteUser),
+                        Content = new StringContent(JsonConvert.SerializeObject(selectedUsers), Encoding.UTF8, "application/json")
 
-                };
-                request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", tokenResult.access_token);
+                    };
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", tokenResult.access_token);
 
-                var result = client.SendAsync(request).Result;
+                    var result = client.SendAsync(request).Result;
 
-                return result.IsSuccessStatusCode;
+                    return result.IsSuccessStatusCode;
+                }
             }
+            return false;
         }
-    }
-}
+
+        public static UserViewModel  DetailUser(TokenResult tokenResult, int id)
+        {
+           if(tokenResult != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGetListUser + id.ToString()).Result.Content.ReadAsStringAsync();
+                    var myObject = JValue.Parse(result.Result);
+                    var user = (JToken)myObject;
+                    if (user.HasValues)
+                    {
+                        UserViewModel userDetail = UserViewModel.getUser(user);
+                        return userDetail;
+                    }
+                }
+            }
+            return new UserViewModel();
+        }
+
+        public static List<RoleViewModel> getRolesByIdUser(TokenResult tokenResult, int id)
+        {
+            if(tokenResult != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGetListUser + id.ToString()).Result.Content.ReadAsStringAsync();
+                    var myObject = JValue.Parse(result.Result);
+                    var user = (JToken)myObject;
+                    var roles = user["roles"];
+                    if (roles.HasValues)
+                    {
+                        List<RoleViewModel> userDetail = RoleViewModel.getRoles(user);
+                        return userDetail;
+                    }
+                }
+            }
+            return new List<RoleViewModel>();
+        }
+    }   
+}   

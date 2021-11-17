@@ -1,0 +1,224 @@
+﻿@model PhoDiem_TLU.ViewModels.UserViewModel
+@using PhoDiem_TLU.ViewModels
+@{ 
+    var a = Model.roleIds;
+}
+
+
+
+@using (Html.BeginForm("UpdateUser","User",FormMethod.Post,new { id = Model.id }))
+{
+    @Html.AntiForgeryToken()
+    
+<div class="form-horizontal">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    @Html.HiddenFor(model => model.id)
+
+
+
+
+    <div class="form-group">
+        Họ và tên
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.person.displayName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.person.displayName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Kích hoạt
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.active, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Email
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-10">
+            <div class="checkbox">
+                <input type="checkbox" class="form-group check-box" />
+                <span>Đổi pass</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="display:none" class="change-pass">
+        <div class="form-group">
+            Xác nhận mật khẩu
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
+            </div>
+        </div>
+        <div class="form-group">
+            Mật khẩu
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+            </div>
+        </div>
+    </div>
+
+
+    <!--Peron-->
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.birthPlace, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.birthPlace, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.displayName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.displayName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.createDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.createDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.modifyDate, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.modifyDate, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.modifiedBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.modifiedBy, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.createdBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.createdBy, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group" style="display:none">
+        <div class="col-md-10">
+            @Html.HiddenFor(model => model.dob, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dob, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Họ
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.person.firstName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.person.firstName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Tên
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.person.lastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.person.lastName, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Tên đăng nhập
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        Giới tính
+        <div class="col-md-10">
+            @Html.DropDownListFor(model => model.person.gender, ViewBag.genderList as SelectList, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.person.gender, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label>Quyền</label>
+        <div class="col-md-10">
+            @Html.ListBoxFor(model => model.roleIds, new MultiSelectList(ViewBag.roles, "id", "name"), new { @class = "multiDropdownList", multiple = "multiple" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div class="col-md-offset-2 col-md-10">
+            <input type="submit" value="Cập nhập" class="btn btn-success" />
+        </div>
+    </div>
+</div>
+}
+<script>
+    var checkbox = document.getElementsByClassName('check-box');
+    var isShow = true;
+    checkbox[0].onchange = () => {
+        let changepass = document.getElementsByClassName('change-pass');
+        console.log(changepass);
+        if (isShow) {
+            changepass[0].style.display = 'block';
+            isShow = false;
+        }
+        else {
+            changepass[0].style.display = 'none';
+            isShow = true;
+        }
+
+    }
+
+    $('.multiDropdownList').chosen(
+        {
+            width: "100%"
+        }
+    );
+
+    $(document).ready(function () {
+
+        $("#btnSubmit").click(function () {
+
+            $("#loaderDiv").show();
+
+            var myformdata = $("#myForm").serialize();
+
+            $.ajax({
+
+                type: "GET",
+                url: "/User/DetailAndEditUser",
+                data: myformdata,
+                success: function (response) {
+                    console.log(response);
+                    $("#loaderDiv").hide();
+                    $("#myModal").modal("hide");
+                    window.location.href = "/User/DetailAndEditUser";
+                }
+
+            })
+        })
+
+    })
+    document.clear();
+
+</script>

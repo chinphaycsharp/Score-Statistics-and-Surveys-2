@@ -4,6 +4,8 @@
 
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
+
+
 }
 
 @section ScriptDropdown {
@@ -107,7 +109,6 @@
         <label>Quyền</label>
         <div class="col-md-10">
             @Html.DropDownListFor(model => model.roleIds, new MultiSelectList(Model.roles, "id", "name"), new { id = "multiDropdown", multiple = "multiple" })
-
         </div>
     </div>
 
