@@ -114,8 +114,8 @@
 
     <div class="form-group" style="display:none">
         <div class="col-md-10">
-            @Html.HiddenFor(model => model.createBy, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.createBy, "", new { @class = "text-danger" })
+            @Html.HiddenFor(model => model.createdBy, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.createdBy, "", new { @class = "text-danger" })
         </div>
     </div>
 
@@ -137,8 +137,8 @@
     <div class="form-group">
         Tên
         <div class="col-md-10">
-            @Html.EditorFor(model => model.person.lasttName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.person.lasttName, "", new { @class = "text-danger" })
+            @Html.EditorFor(model => model.person.lastName, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.person.lastName, "", new { @class = "text-danger" })
         </div>
     </div>
 

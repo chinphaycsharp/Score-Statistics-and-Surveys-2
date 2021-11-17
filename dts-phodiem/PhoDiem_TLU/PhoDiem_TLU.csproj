@@ -295,6 +295,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Commons\UserLogin.cs" />
     <Compile Include="Commons\Constants.cs" />
     <Compile Include="Commons\SeesionSystems.cs" />
     <Compile Include="Commons\TokenResult.cs" />

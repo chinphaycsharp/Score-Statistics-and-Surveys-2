@@ -88,6 +88,30 @@ namespace PhoDiem_TLU.Core
             return false;
         }
 
+        public static UserLogin GetUser(TokenResult tokenResult)
+        {
+            //Tương tự như hàm trên sử dụng httpclient để giao tiếp với server
+            if (tokenResult != null)
+            {
+                using (var client = new HttpClient())
+                {
+                    //Gán header để Authorization với Bearer Token
+                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                            tokenResult.access_token);
+
+                    var result = client.GetAsync(urlGet).Result.Content.ReadAsStringAsync();
+                    var myObject = JValue.Parse(result.Result);
+                    var jToken = (JToken)myObject;
+                    var roles = jToken["roles"];
+                    UserLogin user = new UserLogin();
+                    List<RoleViewModel> resultRoles = RoleViewModel.getRoles(roles);
+                    user.roles = resultRoles;
+                    return user;
+                }
+            }
+            return new UserLogin();
+        }
+
         private static bool handleRoles(string jsoninput)
         {
             JObject json = JObject.Parse(jsoninput);
@@ -183,32 +207,49 @@ namespace PhoDiem_TLU.Core
 
         public static DataViewModels GetListUser(TokenResult tokenResult,int? page, int pageSize)
         {
-            if(tokenResult != null)
+            UserLogin user = LoginTokenHttpClient.GetUser(tokenResult);
+            bool isAdmin = false;
+            foreach (var item in user.roles)
             {
-                using (var client = new HttpClient())
+                if(item.name == Constants.ROLE_ADMIN)
                 {
-                    //Gán header để Authorization với Bearer Token
-                    client.DefaultRequestHeaders.Add("Accept", "application/json");
-                    client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
-                            tokenResult.access_token);
-
-                    var result = client.GetAsync(urlGetListUser + page.ToString() + "/" + pageSize.ToString()).Result.Content.ReadAsStringAsync();
-                    var myObject = JValue.Parse(result.Result);
-                    var jToken = (JToken)myObject;
-                    //List<UserViewModel> users = new List<UserViewModel>();
-                    if (jToken["content"] != null)
+                    isAdmin = true;
+                    break;
+                }
+            }
+            if(isAdmin)
+            {
+                if (tokenResult != null)
+                {
+                    using (var client = new HttpClient())
                     {
-                        DataViewModels pagination = new DataViewModels();
-                        var content = jToken["content"];
-                        pagination.content = UserViewModel.HandleJtokenToUserResult(content);
+                        //Gán header để Authorization với Bearer Token
+                        client.DefaultRequestHeaders.Add("Accept", "application/json");
+                        client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer",
+                                tokenResult.access_token);
 
-                        pagination.size = (int)jToken["size"];
-                        pagination.numberOfElements = (int)jToken["numberOfElements"];
-                        pagination.totalElements = (int)jToken["totalElements"];
-                        pagination.totalPages = (int)jToken["totalPages"];
-                        return pagination;
+                        var result = client.GetAsync(urlGetListUser + page.ToString() + "/" + pageSize.ToString()).Result.Content.ReadAsStringAsync();
+                        var myObject = JValue.Parse(result.Result);
+                        var jToken = (JToken)myObject;
+                        //List<UserViewModel> users = new List<UserViewModel>();
+                        if (jToken["content"] != null)
+                        {
+                            DataViewModels pagination = new DataViewModels();
+                            var content = jToken["content"];
+                            pagination.content = UserViewModel.HandleJtokenToUserResult(content);
+
+                            pagination.size = (int)jToken["size"];
+                            pagination.numberOfElements = (int)jToken["numberOfElements"];
+                            pagination.totalElements = (int)jToken["totalElements"];
+                            pagination.totalPages = (int)jToken["totalPages"];
+                            return pagination;
+                        }
                     }
                 }
+            }
+            else
+            {
+                return null;
             }
             return null;
         }

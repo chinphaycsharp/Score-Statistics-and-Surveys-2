@@ -9,7 +9,7 @@ namespace PhoDiem_TLU.ViewModels
     public class UpdateUserViewModel
     {
         public DateTime createDate { get; set; }
-        public string createBy { get; set; }
+        public string createdBy { get; set; }
         public DateTime modifyDate { get; set; }
         public string modifiedBy { get; set; }
         public long id { get; set; }
@@ -20,7 +20,7 @@ namespace PhoDiem_TLU.ViewModels
         public bool changePass { get; set; }
         public bool active { get; set; }
         public string lastName { get; set; }
-        public string fisrtName { get; set; }
+        public string firstName { get; set; }
         public string dob { get; set; }
         public string birthPlace { get; set; }
         public string email { get; set; }

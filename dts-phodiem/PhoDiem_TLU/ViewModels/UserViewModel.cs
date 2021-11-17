@@ -19,7 +19,7 @@ namespace PhoDiem_TLU.ViewModels
         [DisplayName("Xac nhan mat khau")]
         public string confirmPassword { get; set; }
         public DateTime createDate { get; set; }
-        public string createBy { get; set; }
+        public string createdBy { get; set; }
         [DisplayName("Ho va ten")]
         public string displayName { get; set; }
         public string dob { get; set; }
@@ -60,7 +60,7 @@ namespace PhoDiem_TLU.ViewModels
                 user.changePass = (bool)item["changePass"];
                 user.confirmPassword = (string)item["confirmPassword"];
                 user.createDate = Constants.HandleJtokenToDate(item["createDate"]) ;
-                user.createBy = (string)item["createdBy"];
+                user.createdBy = (string)item["createdBy"];
                 user.displayName = (string)item["displayName"];
                 user.dob = (string)item["dob"];
                 user.email = (string)item["email"];
@@ -74,10 +74,10 @@ namespace PhoDiem_TLU.ViewModels
                 var person = item["person"];
                 if(person.HasValues)
                 {
-                    user.person.createBy = (string)person["createdBy"];
+                    user.person.createdBy = (string)person["createdBy"];
                     user.person.displayName = (string)person["displayName"];
                     user.person.firstName = (string)person["firstName"];
-                    user.person.lasttName = (string)person["lastName"];
+                    user.person.lastName = (string)person["lastName"];
                     user.person.modifiedBy = (string)person["modifiedBy"];
                     user.person.modifyDate = Constants.HandleJtokenToDate(person["modifyDate"]);
                     user.person.createDate = Constants.HandleJtokenToDate(person["createDate"]);
@@ -102,7 +102,7 @@ namespace PhoDiem_TLU.ViewModels
             user.createDate = Constants.HandleJtokenToDate(input["createDate"]);
             user.active = (int)input["active"];
             user.changePass = (bool)input["changePass"];
-            user.createBy = (string)input["createdBy"];
+            user.createdBy = (string)input["createdBy"];
             user.displayName = (string)input["displayName"];
             user.email = (string)input["email"];
             user.id = (int)input["id"];
@@ -118,20 +118,20 @@ namespace PhoDiem_TLU.ViewModels
             {
                 user.person.createDate = Constants.HandleJtokenToDate(person["createDate"]);
                 user.person.email = (string)person["email"];
-                user.person.createBy = (string)person["createBy"];
+                user.person.createdBy = (string)person["createBy"];
                 user.person.displayName = (string)person["displayName"];
                 user.person.firstName = (string)person["firstName"];
                 user.person.gender = (string)person["gender"];
                 user.person.id = (long)person["id"];
-                user.person.lasttName = (string)person["lastName"];
+                user.person.lastName = (string)person["lastName"];
                 user.person.modifyDate = Constants.HandleJtokenToDate(person["modifyDate"]);
+                user.person.birthDateString = (string)person["birthDateString"];
                 user.person.userId = (string)person["userId"];
                 user.person.phoneNumber = (string)person["phoneNumber"];
-                user.person.phoneNumber = (string)person["idNumberIssueDate"];
-                user.person.phoneNumber = (string)person["idNumberIssueBy"];
-                user.person.phoneNumber = (string)person["idNumber"];
-                user.person.phoneNumber = (string)person["birthDateString"];
-                user.person.phoneNumber = (string)person["birthDate"];
+                user.person.idNumber = (string)person["idNumber"];
+                user.person.idNumberIssueBy = (string)person["idNumberIssueBy"];
+                user.person.idNumberIssueDate = (string)person["idNumberIssueDate"];
+                user.person.idNumberIssueDateString = (string)person["idNumberIssueDateString"];
                 var address = person["address"];
                 if(address.HasValues)
                 {
@@ -182,13 +182,13 @@ namespace PhoDiem_TLU.ViewModels
         public DateTime modifyDate { get; set; }
         public string modifiedBy { get; set; }
         public string createIp { get; set; }
-        public string createBy { get; set; }
+        public string createdBy { get; set; }
         public string displayName { get; set; }
         public string email { get; set; }
         public DateTime endDate { get; set; }
         public string ethnics { get; set; }
         [DisplayName("Họ")]
-        public string lasttName { get; set; }
+        public string lastName { get; set; }
         [DisplayName("Tên")]
         public string firstName { get; set; }
         public string gender { get; set; }
@@ -202,19 +202,24 @@ namespace PhoDiem_TLU.ViewModels
         public string shortName { get; set; }
         public DateTime startDate { get; set; }
         public string userId { get; set; }
+        public string idNumber { get; set; }
+        public string idNumberIssueBy { get; set; }
+        public string idNumberIssueDate  { get; set; }
+        public string idNumberIssueDateString { get; set; }
+
     }
 
     public class AddressViewModel
     {
         public long id { get; set; }
         public string address { get; set; }
-        public string address2 { get; set; }
+        public string address1 { get; set; }
         public string city { get; set; }
         public string province { get; set; }
         public string country { get; set; }
         public string postalCode { get; set; }
         public string latitude { get; set; }
-        public string longtitude { get; set; }
+        public string longitude { get; set; }
         public long personId { get; set; }
         public string type { get; set; }
         public long provinceId { get; set; }

@@ -24,8 +24,17 @@ namespace PhoDiem_TLU.Controllers
 
             TokenResult tokenResult = (TokenResult)Session[SeesionSystems.USER_TOKEN];
             DataViewModels pagination = LoginTokenHttpClient.GetListUser(tokenResult,page,pageSize);
+            Pager pager = null;
+            if (pagination != null)
+            {
+                pager = new Pager(pagination.totalElements, page, pageSize);
+            }
+            else
+            {
+                //Chỗ này thêm thông báo nếu người dùng k có quyền hiển thị ra
+                return RedirectToAction("Index", "Login");
+            }
 
-            var pager = new Pager(pagination.totalElements, page, pageSize);
 
             int recSkip = (page - 1) * pageSize;
 
@@ -156,7 +165,14 @@ namespace PhoDiem_TLU.Controllers
                     return RedirectToAction("Index");
                 }
                 Task<bool> check = LoginTokenHttpClient.AddUserAsync(user,tokenResult);
-                SetAlert("Them nguoi dung thanh cong", "success");
+                if(check.Result)
+                {
+                    SetAlert("Them nguoi dung thanh cong", "success");
+                }
+                else
+                {
+                    SetAlert("Đã có lỗi xảy ra với hệ thống", "warning");
+                }
                 return RedirectToAction("ListUser", "User");
             }
             return RedirectToAction("ListUser", "User");
@@ -227,7 +243,10 @@ namespace PhoDiem_TLU.Controllers
         public ActionResult UpdateUser(int id, UserViewModel model)
         {
             bool isAdmin = false;
-            foreach (var item in model.roles)
+            TokenResult tokenResult = (TokenResult)Session[SeesionSystems.USER_TOKEN];
+            UserViewModel detail = LoginTokenHttpClient.DetailUser(tokenResult, id);
+            UserLogin user = LoginTokenHttpClient.GetUser(tokenResult);
+            foreach (var item in user.roles)
             {
                 if(item.name == Constants.ROLE_ADMIN)
                 {
@@ -239,25 +258,34 @@ namespace PhoDiem_TLU.Controllers
             {
                 if (model != null)
                 {
-                    TokenResult tokenResult = (TokenResult)Session[SeesionSystems.USER_TOKEN];
+
                     UpdateUserViewModel updateUser = new UpdateUserViewModel();
                     updateUser.id = (long)id;
                     updateUser.birthPlace = model.birthPlace;
                     updateUser.confirmPassword = model.confirmPassword;
-                    updateUser.createDate = model.createDate;
-                    updateUser.createBy = "lequang";
+                    updateUser.createdBy = "lequang";
                     updateUser.displayName = model.displayName;
                     updateUser.dob = model.dob;
                     updateUser.email = model.email;
-                    updateUser.fisrtName = model.firstName;
+                    updateUser.firstName = model.firstName;
                     updateUser.hasPhoto = true;
                     updateUser.isNew = false;
                     updateUser.lastName = model.lastName;
-                    updateUser.modifyDate = DateTime.Now;
                     updateUser.password = model.password;
-                    updateUser.person = model.person;
+                    updateUser.username = model.username;
+                    updateUser.person = detail.person;
+                    updateUser.person.lastName = String.Empty;
+                    updateUser.person.firstName = String.Empty;
+                    string fullName = model.person.displayName;
+                    string[] nameSlice = fullName.Split(' ');
+                    updateUser.person.firstName = nameSlice[nameSlice.Length - 1];
+                    for (int i = 0; i < nameSlice.Length - 1; i++)
+                    {
+                        updateUser.person.lastName += nameSlice[i] + " ";
+                    }
                     updateUser.active = model.active == 1 ? true : false;
                     updateUser.groups = new List<GruopUpdateViewModel>();
+                    updateUser.person.displayName = fullName;
                     IEnumerable<RoleViewModel> roles = LoginTokenHttpClient.getAllRoles(tokenResult).AsEnumerable();
                     List<RoleViewModel> roleupdate = new List<RoleViewModel>();
                     foreach (var item in roles)
@@ -271,7 +299,7 @@ namespace PhoDiem_TLU.Controllers
                         }
                     }
                     updateUser.roles = roleupdate;
-                    UserViewModel detail = LoginTokenHttpClient.DetailUser(tokenResult, id);
+
                     updateUser.person.address = detail.person.address;
                     if (model.password != null)
                     {
@@ -282,10 +310,10 @@ namespace PhoDiem_TLU.Controllers
                     {
                         model.setPassword = true;
                         updateUser.changePass = true;
-                        if (model.password.Contains(model.confirmPassword))
+                        if (!model.password.Contains(model.confirmPassword))
                         {
                             SetAlert("Nhap lai mat khau khong dung", "warning");
-                            return View();
+                            return RedirectToAction("ListUser", "User");
                         }
                     }
                     else
@@ -294,7 +322,14 @@ namespace PhoDiem_TLU.Controllers
                         model.setPassword = false;
                     }
                     Task<bool> check = LoginTokenHttpClient.UpdateUserAsync(updateUser, tokenResult);
-                    SetAlert("Them nguoi dung thanh cong", "success");
+                    if(check.Result)
+                    {
+                        SetAlert("Cập nhập thành công", "success");
+                    }
+                    else
+                    {
+                        SetAlert("Đã có lỗi xảy ra với hệ thống", "warning");
+                    }
                     return RedirectToAction("ListUser", "User");
                 }
             }
