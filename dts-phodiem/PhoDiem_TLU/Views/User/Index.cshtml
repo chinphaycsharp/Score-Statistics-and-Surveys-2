@@ -75,13 +75,13 @@
                     <div class="row justify-content-between text-left">
                         <div class="form-group col-sm-6 flex-column d-flex">
                             @Html.Label("Mật khẩu", htmlAttributes: new { @class = "form-control-label px-3" })
-                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.PasswordFor(model => model.password, new { htmlAttributes = new { @class = "", required = "required" } })
                             @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
 
                         </div>
                         <div class="form-group col-sm-6 flex-column d-flex">
                             @Html.Label("Nhập lại mật khẩu", htmlAttributes: new { @class = "form-control-label px-3" })
-                            @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.PasswordFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "", required = "required" } })
                             @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
 
                         </div>
