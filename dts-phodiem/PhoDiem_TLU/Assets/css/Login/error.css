@@ -1,0 +1,81 @@
+﻿.error-background {
+    background-color: #beafb6a8;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.error-container {
+    background-color: #F2F9FB;
+    margin: 5rem auto;
+    width: 45rem;
+    height: 35rem;
+    border-radius: 0.5rem;
+    box-shadow: 0rem 0rem 11px 13px #91959fa1;
+}
+
+.error-logo {
+    text-align: center;
+    padding-top: 5rem;
+}
+
+    .error-logo img {
+        width: 8rem;
+        height: 8rem;
+    }
+
+.error-message {
+    padding: 1rem;
+}
+
+.error-message h3 {
+    font-size: 23px;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.error-message p {
+    text-align: center;
+    font-family: sans-serif;
+}
+
+.error-message p a {
+    text-decoration: none;
+    color: cadetblue;
+}
+
+    .error-message p a:visited {
+        text-decoration: none;
+    }
+    
+    .error-message p a:hover{
+       color: chocolate;
+    }
+
+
+
+.error-btn {
+    text-align: center;
+}
+
+    .error-btn a:hover button {
+        background-color: blanchedalmond;
+        color: firebrick;
+    }
+
+        .error-btn a button {
+            cursor: pointer;
+            width: 13rem;
+            background-color: #1A2232;
+            color: #F2F9FB;
+            font-family: sans-serif;
+            height: 2.5rem;
+            outline: none;
+            font-size: 14px;
+            border-radius: 0.5rem;
+            border: none;
+            
+        }

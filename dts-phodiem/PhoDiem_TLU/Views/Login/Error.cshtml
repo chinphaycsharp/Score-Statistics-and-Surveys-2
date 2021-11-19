@@ -9,10 +9,26 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Error</title>
+
+    <link href="~/Assets/css/Login/error.css" rel="stylesheet" />
+    
 </head>
 <body>
-    <div> 
-        Bạn không có quyền vào trang này
+    <div>
+        <div class="error-background"></div>
+        <div class="error-container">
+            <div class="error-logo"><img src="~/Assets/css/Login/error.png" alt="Lỗi"/></div>
+            <div class="error-message">
+                
+                <h3>Có điều gì đó không ổn!</h3>
+                <p>
+                    Bạn không có quyền truy cập vào trang này.
+                    Vui lòng liên hệ quản trị viên của bạn để lấy tài khoản.
+                    Hoặc <a href="~/login">đăng nhập</a> bằng tài khoản khác
+                </p>
+            </div>
+            <div class="error-btn"><a href="#"><button class="btn btn-default">Quay lại trang chủ</button></a></div>
+        </div>
     </div>
 </body>
 </html>
