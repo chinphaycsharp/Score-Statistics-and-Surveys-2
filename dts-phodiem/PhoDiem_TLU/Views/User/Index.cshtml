@@ -23,103 +23,95 @@
 
 }
 
-@using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
-{
-    @Html.AntiForgeryToken()
-
-<div class="form-horizontal">
-    <h4>Thêm moi nguoi dung</h4>
-    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-    <div class="form-group">
-        @Html.LabelFor(model => model.displayName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.displayName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.displayName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+<link href="~/Assets/css/uer-index.css" rel="stylesheet" />
+<div class="container-fluid px-1 py-5 mx-auto">
+    <div class="row d-flex justify-content-center">
+        <div class="col-xl-9 col-lg-10 col-md-11 col-12 text-center">
 
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.username, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
-        </div>
-    </div>
+            <div class="card">
+                <h5 class="text-center mb-4">Thêm mới người dùng</h5>
+                <hr /><p></p>
+                @using (Html.BeginForm("CreateUser", "User", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.firstName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.firstName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Họ và tên", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.displayName, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.displayName, "", new { @class = "text-danger" })
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Tên đăng nhập", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.username, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.username, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Họ", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.firstName, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.lastName, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Tên", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.lastName, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.lastName, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.password, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            @Html.Label("Địa chỉ email", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.gender, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.DropDownListFor(model=>model.gender, ViewBag.genderList as SelectList, new { htmlAttributes = new { @class = "form-control" } })
-        </div>
-    </div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Mật khẩu", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.password, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.confirmPassword, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "form-control" } })
-            @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
-        </div>
-    </div>
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Nhập lại mật khẩu", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.confirmPassword, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.confirmPassword, "", new { @class = "text-danger" })
 
-    <div class="form-group">
-        @Html.LabelFor(model => model.active, htmlAttributes: new { @class = "control-label col-md-2" })
-        <div class="col-md-10">
-            <div class="checkbox">
-                @Html.EditorFor(model => model.active)
-                @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.Label("Giới tính", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.DropDownListFor(model => model.gender, ViewBag.genderList as SelectList, htmlAttributes: new { @class = "", required = "required" })
+
+                        </div>
+                        <div class="form-group col-sm-6 flex-column d-flex">
+                            @Html.LabelFor(model => model.active, htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.EditorFor(model => model.active, new { htmlAttributes = new { @class = "", required = "required" } })
+                            @Html.ValidationMessageFor(model => model.active, "", new { @class = "text-danger" })
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-between text-left">
+                        <div class="form-group col-sm-12 flex-column d-flex">
+                            @Html.Label("Phân quyền", htmlAttributes: new { @class = "form-control-label px-3" })
+                            @Html.DropDownListFor(model => model.roleIds, new MultiSelectList(Model.roles, "id", "name"), new { id = "multiDropdown", multiple = "multiple", required = "required" })
+
+                        </div>
+                    </div>
+                    <div class="row justify-content-end">
+                        <div class="form-group col-sm-5"> <button type="submit" class="btn-block btn-primary">Tạo tài khoản</button> </div>
+                    </div>
+                }
             </div>
         </div>
     </div>
-
-    <div class="form-group">
-        <label>Quyền</label>
-        <div class="col-md-10">
-            @Html.DropDownListFor(model => model.roleIds, new MultiSelectList(Model.roles, "id", "name"), new { id = "multiDropdown", multiple = "multiple" })
-        </div>
-    </div>
-
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" value="Create" class="btn btn-default" />
-        </div>
-    </div>
 </div>
-}
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
+<script src="~/Assets/js/uer-index.js"></script>
