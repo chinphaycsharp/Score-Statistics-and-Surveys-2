@@ -7,7 +7,7 @@ using System.Web.Mvc;
 
 namespace XLT_TLU.Controllers
 {
-    public class HomeController:BaseController 
+    public class HomeController:Controller 
     {
         // GET: Home
         public ActionResult Index()

@@ -15,7 +15,7 @@ using System.Web.Mvc;
 
 namespace PhoDiem_TLU.Controllers
 {
-    public class MarkController : BaseController
+    public class MarkController : Controller
     {
         // GET: Mark
         private DBIO dBIO = new DBIO();

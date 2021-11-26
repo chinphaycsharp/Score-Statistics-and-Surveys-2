@@ -11,7 +11,7 @@ using XLT_TLU.Models;
 
 namespace PhoDiem_TLU.Controllers
 {
-    public class SemesterController : BaseController
+    public class SemesterController : Controller
     {
         private XLT_TLU.Models.DTSTLUModels dbSet = new XLT_TLU.Models.DTSTLUModels();
 
@@ -20,8 +20,8 @@ namespace PhoDiem_TLU.Controllers
         // GET: Semester
         public ActionResult Index(List<XLT_TLU.Models.tbl_subject> ss)
         {
-            if (Session[Constants.ROLE_EXAM_MANAGERMENT].ToString() == Constants.ROLE_EXAM_MANAGERMENT)
-            {
+            //if (Session[Constants.ROLE_EXAM_MANAGERMENT].ToString() == Constants.ROLE_EXAM_MANAGERMENT)
+            //{
                 SelectList semester = new SelectList((from s in dbSet.tbl_semester select s), "id", "semester_name");
                 SelectList course_year = new SelectList((from c_y in dbSet.tbl_course_year select c_y), "id", "name");
                 SelectList subject = new SelectList((from s in dbSet.tbl_subject select s), "id", "subject_name");
@@ -35,8 +35,8 @@ namespace PhoDiem_TLU.Controllers
                 ViewBag.semester_regitster_period = semester_register_period;
                 ViewBag.data = dbSet.tbl_subject.Where(s => s.id < 100).ToList();
                 return View();
-            }
-            return RedirectToAction("Error", "Login");
+            //}
+            //return RedirectToAction("Error", "Login");
         }
 
         public JsonResult getSubject(string semesterId, string periodId, string courseId)

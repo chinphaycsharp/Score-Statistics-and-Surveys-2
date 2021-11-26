@@ -11,7 +11,7 @@ using System.Web.Mvc;
 
 namespace PhoDiem_TLU.Controllers
 {
-    public class UserController : BaseController
+    public class UserController : Controller
     {
         private static int pageSize = 10;
         private static int idUser = 0;
@@ -161,17 +161,17 @@ namespace PhoDiem_TLU.Controllers
                 user.roles = roleViews.AsEnumerable();
                 if(user.password != user.confirmPassword)
                 {
-                    SetAlert("Nhap lai mat khau khong dung", "warning");
+                    
                     return RedirectToAction("Index");
                 }
                 Task<bool> check = LoginTokenHttpClient.AddUserAsync(user,tokenResult);
                 if(check.Result)
                 {
-                    SetAlert("Them nguoi dung thanh cong", "success");
+                    
                 }
                 else
                 {
-                    SetAlert("Đã có lỗi xảy ra với hệ thống", "warning");
+                    
                 }
                 return RedirectToAction("ListUser", "User");
             }
@@ -185,7 +185,6 @@ namespace PhoDiem_TLU.Controllers
             bool result = LoginTokenHttpClient.DeleteUsers(tokenResult,selectedUsers);
             if(result)
             {
-                SetAlert("Xoa nguoi dung thanh cong !", "success");
                 return RedirectToAction("ListUser", "User");
             }
             return RedirectToAction("ListUser", "User");
@@ -312,7 +311,6 @@ namespace PhoDiem_TLU.Controllers
                         updateUser.changePass = true;
                         if (!model.password.Contains(model.confirmPassword))
                         {
-                            SetAlert("Nhap lai mat khau khong dung", "warning");
                             return RedirectToAction("ListUser", "User");
                         }
                     }
@@ -324,18 +322,17 @@ namespace PhoDiem_TLU.Controllers
                     Task<bool> check = LoginTokenHttpClient.UpdateUserAsync(updateUser, tokenResult);
                     if(check.Result)
                     {
-                        SetAlert("Cập nhập thành công", "success");
+                        
                     }
                     else
                     {
-                        SetAlert("Đã có lỗi xảy ra với hệ thống", "warning");
+                        
                     }
                     return RedirectToAction("ListUser", "User");
                 }
             }
             else
             {
-                SetAlert("Bạn không có quyền thực hiện thao tác này", "warning");
                 return RedirectToAction("ListUser", "User");
             }
            
