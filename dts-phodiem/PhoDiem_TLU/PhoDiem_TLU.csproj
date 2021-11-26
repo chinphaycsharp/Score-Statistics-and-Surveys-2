@@ -332,7 +332,9 @@
   <ItemGroup>
     <Content Include="Assets\css\reponsive.css" />
     <Content Include="Assets\css\style.css" />
+    <Content Include="Assets\css\uer-index.css" />
     <Content Include="Assets\js\mark.js" />
+    <Content Include="Assets\js\uer-index.js" />
     <Content Include="Assets\js\User.js" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.css" />
     <Content Include="Content\adminlte\components\bootstrap-colorpicker\dist\css\bootstrap-colorpicker.min.css" />

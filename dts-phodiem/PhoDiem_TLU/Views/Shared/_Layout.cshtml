@@ -25,6 +25,9 @@
 <body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
     <div class="wrapper">
         <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <button type="button" id="sidebarCollapse" class="btn btn-default">
+                <i class="fas fa-bars"></i>
+            </button>
             <!-- Left navbar links -->
             <ul class="navbar-nav">
                 <li class="nav-item" style="display:none;">
@@ -147,14 +150,16 @@
                 </li>
             </ul>
         </nav>
-        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <aside class="main-sidebar sidebar-dark-primary elevation-4" id="main_sidebar">
             <!-- Brand Logo -->
             <a href="#" class="brand-link">
                 <img src="../../Content/img/TLULogo.png" alt="TLU Logo" class="brand-image img-circle elevation-3" style="opacity: .8">
                 <span class="brand-text font-weight-light">PHỔ ĐIỂM - TLU </span>
             </a>
+
             <!-- Sidebar -->
             <div class="sidebar">
+
                 <!-- Sidebar user panel (optional) -->
                 <div class="user-panel mt-3 pb-3 mb-3 d-flex">
                     <div class="image">
@@ -164,61 +169,47 @@
                         <a href="#" class="d-block">TTTH</a>
                     </div>
                 </div>
-
-                <!-- Sidebar Menu -->
-                <nav class="mt-2">
-                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
-                        <!-- Add icons to the links using the .nav-icon class
-                        with font-awesome or any other icon font library -->
-
-                        <li class="nav-item has-treeview nav__header-item ">
-                            <div class="nav__header-item-content">
-                                <i class="fa fa-list nav__header-item-logo" aria-hidden="true"></i>
-                                <span class="nav__header-item__text">
-                                    Phổ điểm thi
-                                </span>
-                                <i class="fa fa-chevron-left" aria-hidden="true"></i>
-
-
-                            </div>
-
-                            <ul class="nav__item-sublist">
-                                <li class="nav__header-item">
-                                    <a class="nav__header-item-content nav__header-item__option" href="/Semester/Index">
-                                        <i class="fa fa-chevron-right nav__header-item-icon" aria-hidden="true"></i>
-                                        <span class="nav__header-item__text">
-                                            Phổ điểm theo học kỳ
-                                        </span>
-                                    </a>
-
+                <!--Sidebar Menu custom-->
+                <nav id="sidebar">
+                    <ul class="list-unstyled components">
+                        <li>
+                            <a href="/Home/Index">Trang chủ</a>
+                        </li>
+                        <li>
+                            <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                                Xem phổ điểm
+                            </a>
+                            <ul class="collapse list-unstyled" id="homeSubmenu">
+                                <li>
+                                    <a href="/Semester/Index">Phổ điểm theo học kỳ</a>
                                 </li>
-                                <li class="nav__header-item">
-                                    <a class="nav__header-item-content nav__header-item__option" href="/StatisticsByCourseSubject/Index">
-                                        <i class="fa fa-chevron-right nav__header-item-icon" aria-hidden="true"></i>
-                                        <span class="nav__header-item__text">
-                                            Phổ điểm theo năm học
-                                        </span>
-                                    </a>
-
+                                <li>
+                                    <a href="/StatisticsByCourseSubject/Index">Phổ điểm theo năm học</a>
                                 </li>
-                                <li class="nav__header-item">
-                                    <a class="nav__header-item-content nav__header-item__option" href="/Mark/Index">
-                                        <i class="fa fa-chevron-right nav__header-item-icon" aria-hidden="true"></i>
-                                        <span class="nav__header-item__text">
-                                            Phổ điểm trong nhiều năm
-                                        </span>
-                                    </a>
-
+                                <li>
+                                    <a href="/Mark/Index">Phổ điểm trong nhiều năm</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#userMenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Quản lý USER</a>
+                            <ul class="collapse list-unstyled" id="userMenu">
+                                <li>
+                                    <a href="/User/ListUser">Xem danh sách User</a>
+                                </li>
+                                <li>
+                                    <a href="/User/Index">Thêm mới User</a>
                                 </li>
                             </ul>
                         </li>
                     </ul>
                 </nav>
-                <!-- /.sidebar-menu -->
+                <!--/.Sidebar menu custom-->
             </div>
             <!-- /.sidebar -->
         </aside>
         <!-- /.sidebar-menu -->
+
         <!-- /RenderBody -->
         <div class="content-wrapper">
             <!-- /.container-fluid -->
@@ -243,6 +234,8 @@
     <script src="/Content/plugins/jquery/jquery.min.js"></script>
     @*<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>*@
     <!-- Bootstrap -->
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
     <script src="/Content/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="/Content/plugins/select2/js/select2.full.min.js"></script>
