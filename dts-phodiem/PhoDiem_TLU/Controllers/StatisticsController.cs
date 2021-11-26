@@ -10,7 +10,7 @@ using System.Web.Mvc;
 
 namespace PhoDiem_TLU.Controllers
 {
-    public class StatisticsController : BaseController
+    public class StatisticsController : Controller
     {
         // GET: Statistics
         XLT_TLU.Models.DTSTLUModels db = new XLT_TLU.Models.DTSTLUModels();
